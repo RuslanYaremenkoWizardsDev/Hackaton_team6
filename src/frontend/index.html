@@ -2,42 +2,190 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
-    <!-- <link rel="stylesheet" href="../css/homePage.css">
-    <link rel="stylesheet" href="../css/header.css"> -->
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
+   
 </head>
 <body>
     <header>
         <div class="container">
             <div class="container__name block">
                 <div class="block__left">
+                    <img class="block__left--logo" src="img/header-logo.png">
                     <h2 class="block__left--name">ByDefault</h2>  
                 </div>
-                <a href="createAccount.html">NEXT</a>
+                <a href="signIn.html">NEXT</a>
                 <div class="block__right container-dropdwn">
                     <div class="container-dropdwn__dropdown">
                         <button class="dropbtn btn" id="localization-switch">
                             En
                         </button>
-                        <div class="dropdown-content " id="dropdown-languages">
-                            <button class="dropdown-content btn-modal">Russian</button>
+                        <div class="dropdown-content" id="dropdown-languages">
+                            <button class="dropdown-content--btn">Russian</button>
                             <hr>
-                            <button class="dropdown-content btn-modal">English</button>
+                            <button class="dropdown-content--btn">English</button>
                         </div>
                     </div>
-                    <button class="topic btn">bbb<img class="topic"  alt=""></button>
+                    <button class="btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
+                    <div class="container-dropdwn__dropdown">
+                        <button class=" btn" id="setting-btn"><img class="setting" src="img/setting-light.png" alt=""></button>
+                        <div class="dropdown-content" id="settingDropdown">
+                            <button class="dropdown-content--btn" id="change-password">Change password</button>
+                            <hr>
+                            <button class="dropdown-content--btn" id="change-login">Change login</button>
+                        </div>
+                    </div>
+                    <button class="btn"><img class="signout" src="img/sing-out-light.png" alt=""></button>
                 </div>
             </div>
         </div>
     </header>
-    <footer>
-        <div class="block-footer">
-            <p class="block-footer__text">ByDefault project</p>
-            <div class="block-footer--line-vertival"></div>
-            <p class="block-footer__text">2021</p>
+    <div class="window-password" id="window-modal">
+        <div class="window-password__modal-password" id="modal-password">
+            <div class="window-password__modal-password--img" id="close-modal-password">&#10006;</div>
+            <div class="window-password__modal-password__container">
+                <h2 class="window-password__modal-password__container--name">Change Password</h2>
+                <label class="window-password__modal-password__container--lbl elem">old password</label>
+                <div class="window-password__modal-password__container__block" >
+                    <input class="window-password__modal-password__container__block--inpt elem-inpt" id="password-input-old" type="password" minlength="6" maxlength="25" placeholder="Password">
+                    <button class="window-password__modal-password__container__block--show-password"  id="show-password-old"></button>
+                </div>
+                <label class="window-password__modal-password__container--lbl elem">New password</label>
+                <div class="window-password__modal-password__container__block">
+                    <input class="window-password__modal-password__container__block--inpt elem-inpt" id="password-input-new" type="password" minlength="6" maxlength="25" placeholder="New password">
+                    <button class="window-password__modal-password__container__block--show-password" id="show-password-new"></button>
+                </div>
+               
+                <button class="window-password__modal-password__container--btn elem">Confirm</button>
+                <button class="window-password__modal-password__container--link" id="exit">Exit</button>
+            </div>    
         </div>
-    </footer>
+    </div>
+    <div class="window-login" id="window-modal-login">
+        <div class="window-login__modal-login" id="modal-login">
+            <div class="window-login__modal-login--img" id="close-modal-login">&#10006;</div>
+            <div class="window-login__modal-login__container">
+              <h2 class="window-login__modal-login__container--name">Change login</h2>
+              <label class="window-login__modal-login__container--lbl elem">NEw login</label>
+              <input class="window-login__modal-login__container--inpt elem" placeholder="New login" minlength="3" maxlength="25">
+              <button class="window-login__modal-login__container--btn elem">Confirm</button>
+              <button class="window-login__modal-login__container--link" id="exit-login">Exit</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-clear" id="window-clear-all">
+        <div class="modal-clear__modal" id="modal-login">
+            <div class="modal-clear__modal--img" id="close-clear">&#10006;</div>
+            <div class="modal-clear__modal__container">
+              <h2 class="modal-clear__modal__container--name">Clear all?</h2>
+              <div class="modal-clear__modal__container__buttons">
+                <button class="modal-clear__modal__container__buttons--btn">Yes</button>
+                <button class="modal-clear__modal__container__buttons--btn right" id="exit-clear">No</button>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="content">
+        <div class="content__block--left block-dropdownn">
+            <div class="block-dropdownn__bases container-databases">
+                <label class="container-databases__bases--name">Data Bases</label>
+                <div class="container-databases__dropdown">
+                    <button class="container-databases__dropdown--slct" id="databases-btn" value="mysql">MySQL<img class="arrow" src="img/arrow.png"></button>
+                    <div class="container-databases__dropdown--content" id="options">
+                        <div class="content-hover" value="postgresql">PostgreSQL</div>
+                        <div class="content-hover" value="h2">H2</div>
+                        <div class="content-hover" value="mongodb">MongoDB</div>
+                        <div class="content-hover" value="redis">Redis</div>
+                        <div class="content-hover" value="cassandra">Cassandra</div>
+                        <div class="content-hover" value="graphbd">GraphDB</div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-dropdownn__bases container-databases">
+                <label class="container-databases__bases--name">Sorting by</label>
+                <div class="container-databases__dropdown">
+                    <button class="container-databases__dropdown--slct" id="sorting-btn" value="id">Id<img class="arrow" src="img/arrow.png"></button>
+                    <div class="container-databases__dropdown--content" id="sorting-by">
+                        <div class="content-hover" value="firstName">First name</div>
+                        <div class="content-hover" value="lastName">Last name</div>
+                        <div class="content-hover" value="age">Age</div>
+                        <div class="content-hover" value="city">City</div>
+                        <div class="content-hover" value="phoneNumber">Phone number</div>
+                        <div class="content-hover" value="email">Email</div>
+                        <div class="content-hover" value="companyName">Company name</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content__block--right block">
+            <div class="block__main">
+                <div class="block__main--panel panel">
+                    <button class="panel__btn --create">Create <img class="panel__btn--img" src="img/create.png" alt=""> </button>
+                    <button class="panel__btn --update">Update <img class="panel__btn--img" src="img/update.png" alt=""></button>
+                    <button class="panel__btn --delete">Delete <img class="panel__btn--img" src="img/delete.png" alt=""></button>
+                    <button class="panel__btn --clear" id="clear-all">ClearAll <img class="panel__btn--img" src="img/clear-all.png" alt=""></button>
+                    <div class="panel__search">
+                        <form>
+                          <input class="output input" type="search" required placeholder="Last name">
+                          <button type="submit" value="">&#128269;</button>
+                        </form>
+                    </div>
+                    <div class="panel__search">
+                        <form>
+                          <input class="output input" type="search" required placeholder="First name">
+                          <button type="submit" value="">&#128269;</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="block__main--table table">
+                    <div class="table__name">
+                        <div class="table__name__item --left-top small ">id</div>
+                        <div class="table__name__item">Fname</div>
+                        <div class="table__name__item">Lname</div>
+                        <div class="table__name__item small">age</div>
+                        <div class="table__name__item small">city</div>
+                        <div class="table__name__item">phoneNumber</div>
+                        <div class="table__name__item">email</div>
+                        <div class="table__name__item --right-top">companyName</div>
+                    </div>
+                    <div class="table__main">
+                        <div class="table__main__item  small">ff</div>
+                        <div class="table__main__item">ff</div>
+                        <div class="table__main__item">ff</div>
+                        <div class="table__main__item small">ff</div>
+                        <div class="table__main__item small">ff</div>
+                        <div class="table__main__item">ff</div>
+                        <div class="table__main__item">ff</div>
+                        <div class="table__main__item">ff<img class="delete-item" src="img/delete.png" alt=""></div>
+                    </div>
+                    <div class="table__main">
+                        <div class="table__main__item --left-bottom small"></div>
+                        <div class="table__main__item"></div>
+                        <div class="table__main__item"></div>
+                        <div class="table__main__item small"></div>
+                        <div class="table__main__item small"></div>
+                        <div class="table__main__item"></div>
+                        <div class="table__main__item"></div>
+                        <div class="table__main__item --right-bottom"><img class="delete-item" src="img/delete.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    <div class="block-footer">
+        <p class="block-footer__text">ByDefault project</p>
+        <div class="block-footer--line-vertival"></div>
+        <p class="block-footer__text">2021</p>
+    </div>
+</footer>
 </body>
 </html>

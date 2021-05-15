@@ -43,6 +43,13 @@ module.exports = {
         new MiniCssExtractPlugin({
            filename: `./scss/${filename('css')}`,
         }),
+        new HTMLPlugin({
+            filename: 'signIn.html',
+            template: './signIn.html',  // путь к файлу html
+            minify: {
+                collapseWhitespace: isProd,  // в режиме продакшена уберуться все пробелы для сжатия проекта
+            },
+        }),
         new HTMLPlugin({   
             filename: 'index.html',
             template: './index.html',  // путь к файлу html
@@ -53,20 +60,6 @@ module.exports = {
         new HTMLPlugin({   
             filename: 'createAccount.html',
             template: './createAccount.html',  // путь к файлу html
-            minify: {
-                collapseWhitespace: isProd,  // в режиме продакшена уберуться все пробелы для сжатия проекта
-            },
-        }),
-        new HTMLPlugin({   
-            filename: 'signIn.html',
-            template: './signIn.html',  // путь к файлу html
-            minify: {
-                collapseWhitespace: isProd,  // в режиме продакшена уберуться все пробелы для сжатия проекта
-            },
-        }),
-        new HTMLPlugin({   
-            filename: 'mainPage.html',
-            template: './mainPage.html',  // путь к файлу html
             minify: {
                 collapseWhitespace: isProd,  // в режиме продакшена уберуться все пробелы для сжатия проекта
             },
