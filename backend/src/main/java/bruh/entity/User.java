@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import static bruh.util.constants.TableNames.USER_CREDENTIALS;
+import static bruh.util.constants.EntityMessages.USER_CREDENTIALS;
 import static bruh.util.constants.ValidationMessages.FIELD_CANNOT_BE_NULL;
 
 @Data

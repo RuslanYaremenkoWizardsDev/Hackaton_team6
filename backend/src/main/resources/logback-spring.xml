@@ -14,7 +14,7 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>RegAuthLogFile.log</file>
+        <file>BruhLogFile.log</file>
         <append>true</append>
         <encoder>
             <pattern>${FILE_LOG_PATTERN:- %d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss},GMT+3} [%thread] ${LOG_LEVEL_PATTERN:-%2p} %c{0}:%L ---> %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}</pattern>
