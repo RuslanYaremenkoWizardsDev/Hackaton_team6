@@ -7,6 +7,7 @@ import bruh.services.AuthorizationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,7 @@ import static bruh.util.constants.PostMapping.AUTHORIZATION_MAPPING;
 
 @Slf4j
 @RestController
+@CrossOrigin(value = "http://localhost:4080")
 public class AuthorizationController {
     private final AuthorizationService authorizationService;
 

@@ -12,7 +12,7 @@ import static bruh.util.constants.ValidationMessages.FIELD_CANNOT_BE_NULL;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = USER_CREDENTIALS, uniqueConstraints={@UniqueConstraint(columnNames={"login"}, name = "uk_login")})
+@Table(name = USER_CREDENTIALS, uniqueConstraints = {@UniqueConstraint(columnNames = {"login"}, name = "uk_login")})
 public class User {
 
     @Id

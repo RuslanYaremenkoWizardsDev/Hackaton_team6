@@ -58,7 +58,7 @@ class AuthorizationServiceTest {
     @Test
     void authorizeUserIncorrectCredentialsExceptionTest() {
         User user = new User("ufora1", "trolan1");
-        User user1 = new User("ufora1", "trolan23");
+        User user1 = new User("ufora12", "trolan23");
         Mockito.when(postgressRepo.findUserByLogin(user.getLogin())).thenReturn(Optional.of(user1));
         Mockito.when(passwordEncoder.encode(user.getPassword())).thenReturn(user.getPassword() + "not");
 
