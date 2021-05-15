@@ -21,9 +21,9 @@ class RegistrationServiceTest {
 
     private static Stream<Arguments> redisServiceTestNominal() {
         return Stream.of(
-                Arguments.arguments(new User("jeid", "qwerty")),
-                Arguments.arguments(new User("ufora", "asdfgh")),
-                Arguments.arguments(new User("trolan12", "123456"))
+                Arguments.arguments(new User("jeid", "qwerty","user")),
+                Arguments.arguments(new User("ufora", "asdfgh", "user")),
+                Arguments.arguments(new User("trolan12", "123456", "user"))
         );
     }
 
@@ -37,7 +37,7 @@ class RegistrationServiceTest {
 
     @Test
     void registerUserAlreadyExistsTest() {
-        User user = new User("ufora3", "trolan3");
+        User user = new User("ufora3", "trolan3", "user");
         Mockito.when(postgresRepo.save(user)).thenThrow(new ConstraintViolationException(
                 String.format(USERNAME_IS_BUSY, user.getLogin()),
                         new SQLException(String.format(USERNAME_IS_BUSY, user.getLogin())),

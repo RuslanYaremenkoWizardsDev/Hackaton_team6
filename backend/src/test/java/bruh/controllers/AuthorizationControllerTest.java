@@ -51,9 +51,9 @@ class AuthorizationControllerTest {
 
     private static Stream<Arguments> authorizeUserTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto("jeid", "qwerty")),
-                Arguments.arguments(new UserDto("ufora", "asdfgh")),
-                Arguments.arguments(new UserDto("trolan1", "123456"))
+                Arguments.arguments(new UserDto("jeid", "qwerty", "user")),
+                Arguments.arguments(new UserDto("ufora", "asdfgh", "user")),
+                Arguments.arguments(new UserDto("trolan1", "123456", "user"))
         );
     }
 
@@ -62,7 +62,7 @@ class AuthorizationControllerTest {
     void authorizeUserNotFoundTest(UserDto user) throws Exception {
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
         Mockito.doThrow(new InvalidCredentialsException(String.format(USER_WAS_NOT_FOUND, user.getLogin())))
-                .when(authorizationService).authorizeUser(new User(user.getLogin(), user.getPassword()));
+                .when(authorizationService).authorizeUser(new User(user.getLogin(), user.getPassword(), user.getRole()));
 
         mockMvc.perform(post(URL_TEMPLATE)
                 .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
@@ -77,7 +77,7 @@ class AuthorizationControllerTest {
     @MethodSource("authorizeUserTestNominal")
     void authorizeUserIsAuthorizedTest(UserDto user) throws Exception {
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
-        Mockito.when(authorizationService.authorizeUser(new User(user.getLogin(), user.getPassword()))).thenReturn(user.getLogin());
+        Mockito.when(authorizationService.authorizeUser(new User(user.getLogin(), user.getPassword(), user.getRole()))).thenReturn(user.getLogin());
 
         mockMvc.perform(post(URL_TEMPLATE)
                 .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
@@ -93,7 +93,7 @@ class AuthorizationControllerTest {
     void authorizeUserIncorrectCredentialsTest(UserDto user) throws Exception {
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
         Mockito.doThrow(new InvalidCredentialsException(USERNAME_IS_BUSY))
-                .when(authorizationService).authorizeUser(new User(user.getLogin(), user.getPassword()));
+                .when(authorizationService).authorizeUser(new User(user.getLogin(), user.getPassword(), user.getRole()));
 
         mockMvc.perform(post(URL_TEMPLATE)
                 .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
@@ -107,8 +107,8 @@ class AuthorizationControllerTest {
     static Stream<Arguments> authorizeUserExceptionTestNominal() {
         String errMsg = FIELD_CANNOT_BE_NULL;
         return Stream.of(
-                Arguments.arguments(new UserDto(null, "asdasdasd"), errMsg),
-                Arguments.arguments(new UserDto("trolan", null), errMsg)
+                Arguments.arguments(new UserDto(null, "asdasdasd", "user"), errMsg),
+                Arguments.arguments(new UserDto("trolan", null, "user"), errMsg)
         );
     }
 

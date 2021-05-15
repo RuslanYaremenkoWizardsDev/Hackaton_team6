@@ -33,6 +33,6 @@ public class AuthorizationController {
             throw new IncorrectUserFieldsException(errorMessage);
         }
 
-        return authorizationService.authorizeUser(new User(userDto.getLogin(), userDto.getPassword()));
+        return authorizationService.authorizeUser(new User(userDto.getLogin(), userDto.getPassword(), userDto.getRole()));
     }
 }

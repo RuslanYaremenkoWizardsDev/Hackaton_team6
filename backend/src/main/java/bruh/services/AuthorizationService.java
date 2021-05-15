@@ -30,7 +30,7 @@ public class AuthorizationService {
                 -> new InvalidCredentialsException(String.format(USER_WAS_NOT_FOUND, user.getLogin())));
         if (passwordEncoder.encode(user.getPassword()).equals(dbUser.getPassword())) {
             log.info(String.format(SUCCESSFULLY_AUTHORIZED, user.getLogin()));
-            return jwtProducer.createJWT(user.getLogin());
+            return jwtProducer.createJWT(user.getLogin(), user.getRole());
         }
 
         throw new InvalidCredentialsException(String.format(USER_HAS_ANOTHER_PASSWORD, user.getLogin()));

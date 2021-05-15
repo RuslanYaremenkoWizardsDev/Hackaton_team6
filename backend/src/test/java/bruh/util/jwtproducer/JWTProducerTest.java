@@ -25,23 +25,24 @@ class JWTProducerTest {
 
     public static Stream<Arguments> createJWTTestNominal() {
         return Stream.of(
-                Arguments.arguments("trolan", 215151155, 215151),
-                Arguments.arguments("ufora", 123465456, 123465),
-                Arguments.arguments("vurado", 12456214, 12456),
-                Arguments.arguments("jeid", 854123654, 854123)
+                Arguments.arguments("trolan", "user", 215151155, 215151),
+                Arguments.arguments("ufora", "admin", 123465456, 123465),
+                Arguments.arguments("vurado", "user", 12456214, 12456),
+                Arguments.arguments("jeid", "admin", 854123654, 854123)
 
         );
     }
 
     @ParameterizedTest
     @MethodSource("createJWTTestNominal")
-    void createJWTTest(String login, long currentTime, long expectedTime) {
+    void createJWTTest(String login, String role, long currentTime, long expectedTime) {
         long expectedExpirationTime = expTime / 1000 + expectedTime;
         Mockito.when(clock.millis()).thenReturn(currentTime);
 
-        String actual = Base64Codec.BASE64.decodeToString(cut.createJWT(login));
+        String actual = Base64Codec.BASE64.decodeToString(cut.createJWT(login, role));
 
         Assertions.assertTrue(actual.contains(login));
+        Assertions.assertTrue(actual.contains(role));
         Assertions.assertTrue(actual.contains(String.valueOf(expectedExpirationTime)));
         Assertions.assertTrue(actual.contains(String.valueOf(expectedTime)));
     }

@@ -46,10 +46,10 @@ class RegistrationControllerTest {
 
     static Stream<Arguments> registerUserTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto("trolan2", "1234567")),
-                Arguments.arguments(new UserDto("jeid1", "abcdef")),
-                Arguments.arguments(new UserDto("ufora1", "happy123")),
-                Arguments.arguments(new UserDto("antenna1", "asdcvbasd7"))
+                Arguments.arguments(new UserDto("trolan2", "1234567", "user")),
+                Arguments.arguments(new UserDto("jeid1", "abcdef", "user")),
+                Arguments.arguments(new UserDto("ufora1", "happy123", "user")),
+                Arguments.arguments(new UserDto("antenna1", "asdcvbasd7", "user"))
 
         );
     }
@@ -58,7 +58,8 @@ class RegistrationControllerTest {
     @MethodSource("registerUserTestNominal")
     void registerUserTest(UserDto userDTO) throws Exception {
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
-        Mockito.doNothing().when(registrationService).registerUser(new User(userDTO.getLogin(), userDTO.getPassword()));
+        Mockito.doNothing().when(registrationService).registerUser(new User(userDTO.getLogin(), userDTO.getPassword(),
+                userDTO.getRole()));
 
         mockMvc.perform(post(URL_TEMPLATE)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -70,12 +71,12 @@ class RegistrationControllerTest {
 
     static Stream<Arguments> registerUserExceptionTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto(null, "asdasdasd"), FIELD_CANNOT_BE_NULL),
-                Arguments.arguments(new UserDto("фывфы", "123456"), LOGIN_VALIDATE_MESSAGE),
-                Arguments.arguments(new UserDto("asdВВВв", "123456asd"), LOGIN_VALIDATE_MESSAGE),
-                Arguments.arguments(new UserDto("trolan", null), FIELD_CANNOT_BE_NULL),
-                Arguments.arguments(new UserDto("ufora", "ываыва"), PASSWORD_VALIDATE_MESSAGE),
-                Arguments.arguments(new UserDto("jeid", "asdas"), PASSWORD_VALIDATE_MESSAGE)
+                Arguments.arguments(new UserDto(null, "asdasdasd", "user"), FIELD_CANNOT_BE_NULL),
+                Arguments.arguments(new UserDto("фывфы", "123456", "user"), LOGIN_VALIDATE_MESSAGE),
+                Arguments.arguments(new UserDto("asdВВВв", "123456asd", "user"), LOGIN_VALIDATE_MESSAGE),
+                Arguments.arguments(new UserDto("trolan", null, "user"), FIELD_CANNOT_BE_NULL),
+                Arguments.arguments(new UserDto("ufora", "ываыва", "user"), PASSWORD_VALIDATE_MESSAGE),
+                Arguments.arguments(new UserDto("jeid", "asdas", "user"), PASSWORD_VALIDATE_MESSAGE)
         );
     }
 

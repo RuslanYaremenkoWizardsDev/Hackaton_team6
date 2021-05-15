@@ -30,6 +30,6 @@ public class RegistrationController {
             throw new IncorrectUserFieldsException(errorMessage);
         }
 
-        registrationService.registerUser(new User(userDto.getLogin(), userDto.getPassword()));
+        registrationService.registerUser(new User(userDto.getLogin(), userDto.getPassword(), userDto.getRole()));
     }
 }

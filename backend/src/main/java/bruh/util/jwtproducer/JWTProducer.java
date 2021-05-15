@@ -32,10 +32,10 @@ public class JWTProducer {
         secretWord = Base64.getEncoder().encodeToString(secretWord.getBytes());
     }
 
-    public String createJWT(String login) {
+    public String createJWT(String login, String role) {
         Date localDate = new Date(clock.millis());
         Date expDate = new Date(clock.millis() + expTime);
-        Claims claims = Jwts.claims().setSubject(login);
+        Claims claims = Jwts.claims().setSubject(login).setAudience(role);
 
         return Jwts
                 .builder()
