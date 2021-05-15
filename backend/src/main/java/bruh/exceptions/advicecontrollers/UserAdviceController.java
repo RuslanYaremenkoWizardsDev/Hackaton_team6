@@ -4,6 +4,7 @@ import bruh.controllers.AuthorizationController;
 import bruh.controllers.RegistrationController;
 import bruh.exceptions.IncorrectUserFieldsException;
 import bruh.exceptions.InvalidCredentialsException;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,11 +17,13 @@ import static bruh.util.constants.LoggerMessages.USERNAME_IS_BUSY;
 import static bruh.util.constants.ResponseHeaders.APPLICATION_JSON_WITH_CHARSET;
 import static bruh.util.constants.ResponseHeaders.HEADER_CONTENT_TYPE;
 
+@Slf4j
 @ControllerAdvice(basePackageClasses = {AuthorizationController.class, RegistrationController.class})
-public class ValidationAdviceController {
+public class UserAdviceController {
 
     @ExceptionHandler(value = IncorrectUserFieldsException.class)
     public ResponseEntity<Object> handleIncorrectUserFieldsException(Exception e) {
+        log.error(e.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -32,7 +35,7 @@ public class ValidationAdviceController {
     public ResponseEntity<Object> handleInvalidCredentialsException(Exception e) {
         log.error(e.getMessage());
         return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
+                .status(HttpStatus.UNAUTHORIZED)
                 .contentType(MediaType.APPLICATION_JSON)
                 .header(HEADER_CONTENT_TYPE, APPLICATION_JSON_WITH_CHARSET)
                 .body(e.getMessage());
