@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development'; // проверка режима разработки, будет возвращать true если совпало
 const isProd = !isDev; // проверка режима разработки, будет возвращать true если предыдущее false
 
-// функция для наименования файлов в зависимости от мода который выбран
+// функция для наименования файловCopyPlugin в зависимости от мода который выбран
 const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
 
 module.exports = {
@@ -64,9 +64,9 @@ module.exports = {
                 collapseWhitespace: isProd,  // в режиме продакшена уберуться все пробелы для сжатия проекта
             },
         }),
-        new CopyPlugin({
-            patterns: [{from:'./img', to: './img'}]  // копируем картинки
-        }),
+        // new CopyPlugin({
+        //     patterns: [{from:'./img', to: './img'}]  // копируем картинки
+        // }),
     ],
     
     devtool: isProd ? false : 'source-map',   // в режиме разработки показывает где записана та или иная строка в исходном коде
@@ -92,14 +92,23 @@ module.exports = {
                 test: /\.css$/i,       // загрузчики стилей Scss. Работа начинается с конца массива. Scss --> css --> folder
                 use: ['css-loader', 'style-loader'] 
             },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                  {
-                    loader: 'file-loader',
-                  },
-                ]
-            }
+            // {
+            //     test: /\.(png|jpe?g|gif)$/i,
+            //     use: [
+            //       // {
+            //       //   loader: 'file-loader',
+            //       //     options: {
+            //       //         name: '[path][name].[ext]',
+            //       //     },
+            //       // },
+            //       //   {
+            //       //       loader: 'url-loader',
+            //       //       options: {
+            //       //           limit: 8192,
+            //       //       },
+            //       //   },
+            //     ]
+            // }
         ]
     },
 }
