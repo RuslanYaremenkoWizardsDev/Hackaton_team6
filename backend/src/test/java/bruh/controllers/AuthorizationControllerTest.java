@@ -30,13 +30,13 @@ class AuthorizationControllerTest {
 
     private static final String URL_TEMPLATE = "/authorization";
     private static final String CONTENT_TYPE = "Content-Type";
+    private static final String USER_ROLE = "user";
     private static final String APPLICATION_JSON_CHARSET_UTF_8 = "application/json; charset=utf-8";
     private static final String TEXT_PLAIN_CHARSET_ISO = "text/plain;charset=ISO-8859-1";
     private final BindingResult bindingResult = Mockito.mock(BindingResult.class);
     private final AuthorizationService authorizationService = Mockito.mock(AuthorizationService.class);
     private final ObjectMapper objectMapper = new ObjectMapper();
     private MockMvc mockMvc;
-
 
     @BeforeEach
     public void setUp() {
@@ -53,9 +53,9 @@ class AuthorizationControllerTest {
 
     private static Stream<Arguments> authorizeUserTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto("jeid", "qwerty", "user", "king")),
-                Arguments.arguments(new UserDto("ufora", "asdfgh", "user", "king")),
-                Arguments.arguments(new UserDto("trolan1", "123456", "user", "king"))
+                Arguments.arguments(new UserDto("jeid", "qwerty", USER_ROLE, "word1")),
+                Arguments.arguments(new UserDto("ufora", "asdfgh", USER_ROLE, "word2")),
+                Arguments.arguments(new UserDto("trolan1", "123456", USER_ROLE, "word3"))
         );
     }
 
@@ -109,8 +109,8 @@ class AuthorizationControllerTest {
     static Stream<Arguments> authorizeUserExceptionTestNominal() {
         String errMsg = FIELD_CANNOT_BE_NULL;
         return Stream.of(
-                Arguments.arguments(new UserDto(null, "asdasdasd", "user", "king"), errMsg),
-                Arguments.arguments(new UserDto("trolan", null, "user", "king"), errMsg)
+                Arguments.arguments(new UserDto(null, "asdasdasd", USER_ROLE, "word4"), errMsg),
+                Arguments.arguments(new UserDto("trolan", null, USER_ROLE, "word5"), errMsg)
         );
     }
 
@@ -127,5 +127,4 @@ class AuthorizationControllerTest {
                 .andExpect(header().stringValues(CONTENT_TYPE, APPLICATION_JSON_CHARSET_UTF_8))
                 .andReturn();
     }
-
 }

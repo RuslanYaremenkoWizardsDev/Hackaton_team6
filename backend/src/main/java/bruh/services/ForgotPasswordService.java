@@ -24,12 +24,14 @@ public class ForgotPasswordService {
     }
 
     @Transactional
-    public void restorePass(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        User updateUser = iPostgresRepo.findUserByLogin(user.getLogin()).orElseThrow(()
-                -> new InvalidCredentialsException(String.format(USER_WAS_NOT_FOUND, user.getLogin())));
-        updateUser.setPassword(passwordEncoder.encode(user.getPassword()));
-        log.info(String.format(SUCCESSFULLY_CHANGE_PASSWORD, user.getLogin()));
+    public void restorePass(String login, String password, String secretWord) {
+        password = passwordEncoder.encode(password);
+        User updateUser = iPostgresRepo.findUserByLogin(login).orElseThrow(()
+                -> new InvalidCredentialsException(String.format(USER_WAS_NOT_FOUND, login)));
+        if (secretWord.equals(updateUser.getSecretWord())) {
+            log.info(String.format(SUCCESSFULLY_CHANGE_PASSWORD, login));
+            updateUser.setPassword(passwordEncoder.encode(password));
+        }
     }
 }
 

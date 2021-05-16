@@ -31,6 +31,6 @@ public class ForgotPasswordController {
             throw new IncorrectUserFieldsException(errorMessage);
         }
 
-        forgotPasswordService.restorePass(new User(forgotPasswordDto.getLogin(), forgotPasswordDto.getPassword(), forgotPasswordDto.getSecretWord()));
+        forgotPasswordService.restorePass(forgotPasswordDto.getLogin(), forgotPasswordDto.getPassword(), forgotPasswordDto.getSecretWord());
     }
 }
