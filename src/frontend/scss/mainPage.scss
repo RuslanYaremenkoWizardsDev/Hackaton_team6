@@ -38,7 +38,7 @@ button {
     background-color: #717679;
     border-radius: 10px;
     padding: 30px;
-    height: 700px;
+    height: 1200px;
 }
 
 .search{
@@ -200,13 +200,13 @@ td:last-child {
 .rightCont{
      background-color: #C9C9C9;
      width: 58%;
-     height: 400px;
+     height: 800px;
      margin: 20px;
  }
 .leftCont{
     background-color: #C9C9C9;
     width: 35%;
-    height: 400px;
+    height: 800px;
     margin: 20px;
 }
 
@@ -220,7 +220,64 @@ td:last-child {
 }
 
 .hui{
-    margin: 20px 20px 0;
+    margin: 30px 20px 0;
+}
+
+.dateRaw{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.createButton{
+    text-align: right;
+    padding: 10px 30px;
+}
+
+#createButton{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    color: black;
+    background-color: #46CD7C;
+}
+
+#CreateTourPlayersChoose{
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+    width: 300px;
+    background-color: rgb(33, 37, 39);
+    border-radius: 5px;
+    height: 30px;
+}
+
+#CreateTourLevel{
+    margin: 20px 0;
+    color: white;
+    width: 95px;
+    background-color: rgb(33, 37, 39);
+    border-radius: 5px;
+    height: 30px;
+}
+
+#CreateTourScenario{
+    margin: 20px 0;
+    color: white;
+    width: 250px;
+    background-color: rgb(33, 37, 39);
+    border-radius: 5px;
+    height: 30px;
+}
+
+#CreateTourNumPlay{
+    margin: 20px 0;
+    color: white;
+    width: 65px;
+    background-color: rgb(33, 37, 39);
+    border-radius: 5px;
+    height: 30px;
 }
 
 #CreateTourName, #CreateTourDescription, #CreateTourPlace{
@@ -229,13 +286,19 @@ td:last-child {
     width: 90%;
 }
 
-#cupLabel{
+#CreateTourStartDate, #CreateTourEndDate{
+    margin: 10px 20px 0;
+    color: white;
+    width: 150px;
+}
+
+#cupLabel, #ScenarioLabel{
     color: #212527;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 5px;
 }
 
-#radioButton{
+#radioButton, #radioButtonScenario{
     width: 15px;
     height: 15px;
 }
