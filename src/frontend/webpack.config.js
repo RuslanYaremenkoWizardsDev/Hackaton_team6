@@ -45,8 +45,8 @@ module.exports = {
            filename: `./scss/${filename('css')}`,
         }),
         new HTMLPlugin({
-            filename: 'signIn.html',
-            template: './signIn.html',  // путь к файлу html
+            filename: 'mainPage.html',
+            template: './mainPage.html',  // путь к файлу html
             minify: {
                 collapseWhitespace: isProd,  // в режиме продакшена уберуться все пробелы для сжатия проекта
             },

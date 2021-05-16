@@ -1,4 +1,4 @@
-import '../signIn.html';
+import '../index.html';
 import '../scss/header.scss';
 import '../scss/signIn.scss';
 

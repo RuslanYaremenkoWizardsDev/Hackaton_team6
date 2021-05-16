@@ -2,253 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main Page</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
-   
 </head>
-<body>
-<header>
-    <div class="container">
-        <div class="container__name block">
-            <div class="block__left">
-                <img src="img/logoWhite.png">
-                <h2 class="block__left--name">Brah</h2>
-            </div>
-            <a href="createAccount.html">NEXT </a>
-            <a href="signIn.html"> PREV</a>
-            <div class="block__right container-dropdwn">
-                <div class="container-dropdwn__dropdown">
-                    <button class="dropbtn btn" id="localization-switch">
-                        En
-                    </button>
-                    <div id="dropdown-content" >
-                        <button class="dropdown-content btn-modal">Russian</button>
-                        <hr>
-                        <button class="dropdown-content btn-modal">English</button>
+<body class="dark" id="BigBody">
+    <header>
+        <div class="container">
+            <div class="container__name block">
+                <div class="block__left">
+                    <img src="img/logoWhite.png">
+                    <h2 class="block__left--name">Brah</h2>
+                </div>
+                <a href="createAccount.html">NEXT </a>
+                <a href="mainPage.html"> PREV</a>
+                <div class="block__right container-dropdwn">
+                    <div class="container-dropdwn__dropdown">
+                        <button class="dropbtn btn" id="localization-switch">
+                            En
+                        </button>
+                        <div id="dropdown-content" >
+                            <button class="dropdown-content btn-modal">Russian</button>
+                            <hr>
+                            <button class="dropdown-content btn-modal">English</button>
+                        </div>
                     </div>
-                </div>
-                <button class="topic btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
-            </div>
-        </div>
-    </div>
-</header>
-<main>
-    <div class="main-block" id="main-block">
-        <div class="search">
-            <div class="search__input fg--search">
-                <input class="search__input--input" required placeholder="Search by start date (from, to)">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="search__input fg--search">
-                <input class="search__input--input" required placeholder="Search by reg date (from, to)">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="search__input fg--search">
-                <input class="search__input--input"  required placeholder="Search by state">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
-        <div class="clearAll">
-            <button id="clearAll">Clear All</button>
-        </div>
-        <div class="folders">
-            <button class="content-switch active" id="tournament">Tournaments</button>
-            <button class="content-switch" id="createTour">Create tournament</button>
-            <button class="content-switch" id="stats">Stats</button>
-        </div>
-        <div class="content1" id="content1">
-            <section>
-                <div class="container" class = 'table-name'>
-                    <div class="row">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Mode</th>
-                                <th scope="col">StartDate</th>
-                                <th scope="col">LastRegDate</th>
-                                <th scope="col">State</th>
-                                <th scope="col">Level</th>
-                                <th scope="col">Participants</th>
-                                <th scope="col">Scenario</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td data-label="Tournament">Super Cup</td>
-                                <td data-label="Mode">Cup</td>
-                                <td data-label="StartDate">16.05.2021 16:00</td>
-                                <td data-label="LastRegDate">18.05.2021 18:00</td>
-                                <td data-label="State">In progress</td>
-                                <td data-label="Level">Middle</td>
-                                <td data-label="Participants">6 / 32 players</td>
-                                <td data-label="Scenario">one-match</td>
-                                <td data-label="Actions">Image</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Tournament">Super Cup</td>
-                                <td data-label="Mode">Cup</td>
-                                <td data-label="StartDate">16.05.2021 16:00</td>
-                                <td data-label="LastRegDate">18.05.2021 18:00</td>
-                                <td data-label="State">In progress</td>
-                                <td data-label="Level">Middle</td>
-                                <td data-label="Participants">6 / 32 players</td>
-                                <td data-label="Scenario">one-match</td>
-                                <td data-label="Actions">Image</td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="content2" id="content2">
-            <div class="content2flex">
-            <div class="rightCont">
-                <div   class="hui rightCont__label">
-                    Name:
-                </div>
-                <div class="rightCont__input">
-                    <input id="CreateTourName" placeholder="Enter your login..." >
-                </div>
-                <div   class="hui rightCont__label">
-                    Description:
-                </div>
-                <div class="rightCont__input">
-                    <input id="CreateTourDescription" placeholder="Enter your description..." >
-                </div>
-                <div   class="hui rightCont__label">
-                    Mode:
-                    <input type="checkbox" id="radioButton">
-                    <label for="radioButton" id="cupLabel">cup</label>
-                </div>
-                <div   class="hui rightCont__label">
-                    Place:
-                </div>
-                <div class="rightCont__input">
-                    <input id="CreateTourPlace" placeholder="Enter your place..." >
+                    <button class="topic btn" id="modeSwitchToLight"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
+                    <button class="topic btn" id="modeSwitchToDark"><img class="topic" src="img/header-dark-mode-logo.png" alt=""></button>
                 </div>
             </div>
-            <div class="leftCont"> </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="signIn-form">
+            <div class="form__sign">
+                SIGN IN
+            </div>
+            <div class="signIn-form__login">
+                <label for="LoginInput_SignIn" class="form__input-name">
+                    LOGIN
+                </label>
+                <div class="signIn-form__input">
+                    <input id="LoginInput_SignIn" placeholder="Enter your login..." tabindex="1">
+                </div>
+            </div>
+            <div class="form__password">
+                <label for="PasswordInput_SignIn" class="form__input-name">
+                    PASSWORD
+                </label>
+                <div class="signIn-form__input">
+                    <input  id="PasswordInput_SignIn" placeholder="Enter your password..." type="password" tabindex="2">
+                   <i class="far fa-eye" id="togglePassword"></i>
+                </div>
+
+            </div>
+            <div class="signIn-form__submit-button">
+                <button class="SignInButton" tabindex="3">Submit</button>
+                <button class="GuestButton">log in as guest</button>
+            </div>
+            <div class="form__lastWords">
+                Need an account? <a href="createAccount.html">Register now</a>
             </div>
         </div>
+    </main>
+<!--    <footer>-->
+<!--        <div class="block-footer">-->
+<!--            <p class="block-footer__text">Bruh </p>-->
+<!--            <div class="block-footer&#45;&#45;line-vertival"></div>-->
+<!--            <p class="block-footer__text">2021</p>-->
+<!--        </div>-->
+<!--    </footer>-->
+    <script>
+        const localizationSwitch = document.getElementById('localization-switch');
+        const dropdownLang = document.getElementById('dropdown-content');
+        const lightModeButton = document.getElementById("modeSwitchToLight");
+        const darkModeButton = document.getElementById("modeSwitchToDark");
+        const bodyPg = document.getElementById("BigBody");
 
-        <div class="content3" id="content3">
-            <section class="tournaments">
-                <h2 class="tableNames">TOURNAMENTS</h2>
-                <div class="container container3" >
-                    <div class="row container3">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th scope="col">Tournament mode</th>
-                                <th scope="col">Finished</th>
-                                <th scope="col">Closed</th>
-                                <th scope="col">Canceled</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td data-label="Tournament mode">Super Cup</td>
-                                <td data-label="Finished">Cup</td>
-                                <td data-label="Closed">16.05.2021 16:00</td>
-                                <td data-label="Canceled">18.05.2021 18:00</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            <section class="players">
-                <h2 class="tableNames" id="h2players">PLAYERS</h2>
-                <div class="container container3">
-                    <div class="row container3">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th scope="col">Email/Login</th>
-                                <th scope="col">Games</th>
-                                <th scope="col">Wins</th>
-                                <th scope="col">Drows</th>
-                                <th scope="col">Loses</th>
-                                <th scope="col">Cup Wins</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td data-label="Email/Login">Super Cup</td>
-                                <td data-label="Games">Cup</td>
-                                <td data-label="Wins">16.05.2021 16:00</td>
-                                <td data-label="Drows">18.05.2021 18:00</td>
-                                <td data-label="Loses">16.05.2021 16:00</td>
-                                <td data-label="Cup Wins">18.05.2021 18:00</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</main>
-        <script>
-    const localizationSwitch = document.getElementById('localization-switch');
-    const dropdownLang = document.getElementById('dropdown-content');
+        lightModeButton.addEventListener('click', function (e) {
+            bodyPg.classList.add('light');
+            bodyPg.classList.remove('dark');
+            lightModeButton.style.display = "none";
+            darkModeButton.style.display = "block"
+        });
 
-    localizationSwitch.addEventListener('click', function (e) {
-        dropdownLang.style.display = "block";
-    });
+        darkModeButton.addEventListener('click', function (e) {
+            console.log("test");
+            bodyPg.classList.add('dark');
+            bodyPg.classList.remove('light');
+            lightModeButton.style.display = "block";
+            darkModeButton.style.display = "none"
+        });
 
-    dropdownLang.addEventListener('click', function (e) {
-        dropdownLang.style.display = "none";
-    });
+        localizationSwitch.addEventListener('click', function (e) {
+            dropdownLang.style.display = "block";
+        });
 
-    const tournament = document.getElementById("tournament");
-    const crateTour = document.getElementById("createTour");
-    const stats = document.getElementById("stats");
-    const content1 = document.getElementById("content1");
-    const content2 = document.getElementById("content2");
-    const content3 = document.getElementById("content3");
-    const maincontent = document.getElementById("main-block");
-
-    tournament.addEventListener("click",function (e) {
-        content1.style.display = "block";
-        content2.style.display = "none";
-        content3.style.display = "none";
-        crateTour.classList.remove("active");
-        stats.classList.remove("active");
-        tournament.classList.add("active");
-
-    });
-
-    crateTour.addEventListener("click",function (e) {
-        content1.style.display = "none";
-        content2.style.display = "block";
-        content3.style.display = "none";
-        tournament.classList.remove("active");
-        stats.classList.remove("active");
-        crateTour.classList.add("active");
-    });
-
-    stats.addEventListener("click",function (e) {
-        content1.style.display = "none";
-        content2.style.display = "none";
-        content3.style.display = "block";
-        tournament.classList.remove("active");
-        crateTour.classList.remove("active");
-        stats.classList.add("active");
-    });
-</script>
+        dropdownLang.addEventListener('click', function (e) {
+            dropdownLang.style.display = "none";
+        });
+    </script>
 </body>
 </html>

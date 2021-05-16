@@ -1,4 +1,4 @@
-import '../index.html';
+import '../mainPage.html';
 import '../scss/header.scss';
 import '../scss/homePage.scss';
 
