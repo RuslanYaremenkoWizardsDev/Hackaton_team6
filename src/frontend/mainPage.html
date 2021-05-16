@@ -15,28 +15,38 @@
    
 </head>
 <body>
-<header>
-    <div class="container">
-        <div class="container__name block">
-            <div class="block__left">
-                <img src="img/logoWhite.png">
-                <h2 class="block__left--name">Brah</h2>
-            </div>
-            <a href="createAccount.html">NEXT </a>
-            <a href="index.html"> PREV</a>
-            <div class="block__right container-dropdwn">
-                <div class="container-dropdwn__dropdown">
-                    <button class="dropbtn btn" id="localization-switch">
-                        En
-                    </button>
-                    <div id="dropdown-content" >
-                        <button class="dropdown-content btn-modal">Russian</button>
-                        <hr>
-                        <button class="dropdown-content btn-modal">English</button>
-                    </div>
+<header class="header">
+    <div class="left-part">
+        <div class="left-part__logo">
+            <img id="logoPzdc" src="img/logo.png">
+        </div>
+        <div class="left-part__name">
+            Bruh
+        </div>
+    </div>
+    <div class="right-part">
+        <div class=" left-icon mode-switch">
+            <button id="mode-switch">
+                <img id="sun" src="img/sun.png">
+            </button>
+        </div>
+        <div class="left-icon changePassLog">
+            <button id="changePassLog">
+                <img src="img/wheel.png">
+            </button>
+            <div class="changePassLogModal" id="changePassLogModal">
+                <div class="ChangeLogin">
+                    Change Login
                 </div>
-                <button class="topic btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
+                <div class="ChangePassword">
+                    Change Password
+                </div>
             </div>
+        </div>
+        <div class=" left-icon logOut">
+            <button id="logOut">
+                <img src="img/door.png">
+            </button>
         </div>
     </div>
 </header>
@@ -44,15 +54,15 @@
     <div class="main-block" id="main-block">
         <div class="search">
             <div class="search__input fg--search">
-                <input class="search__input--input" required placeholder="Search by start date (from, to)">
+                <input class="search__input--input" required placeholder="Search by end date">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div class="search__input fg--search">
-                <input class="search__input--input" required placeholder="Search by reg date (from, to)">
+                <input class="search__input--input" required placeholder="Search by mode">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div class="search__input fg--search">
-                <input class="search__input--input"  required placeholder="Search by state">
+                <input class="search__input--input"  required placeholder="Search by username">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
         </div>
@@ -272,16 +282,17 @@
     Bruh | 2021
 </footer>
         <script>
-    const localizationSwitch = document.getElementById('localization-switch');
-    const dropdownLang = document.getElementById('dropdown-content');
+            const chageLogPassButt = document.getElementById("changePassLog");
+            const chageLogPassModal = document.getElementById("changePassLogModal");
 
-    localizationSwitch.addEventListener('click', function (e) {
-        dropdownLang.style.display = "block";
-    });
+            chageLogPassButt.addEventListener("click", function (e) {
+                chageLogPassModal.style.display = "block";
+            });
 
-    dropdownLang.addEventListener('click', function (e) {
-        dropdownLang.style.display = "none";
-    });
+            chageLogPassModal.addEventListener("click", function (e) {
+                chageLogPassModal.style.display = "none";
+            });
+
 
     const tournament = document.getElementById("tournament");
     const crateTour = document.getElementById("createTour");
@@ -289,7 +300,6 @@
     const content1 = document.getElementById("content1");
     const content2 = document.getElementById("content2");
     const content3 = document.getElementById("content3");
-    const maincontent = document.getElementById("main-block");
 
     tournament.addEventListener("click",function (e) {
         content1.style.display = "block";
@@ -302,6 +312,7 @@
     });
 
     crateTour.addEventListener("click",function (e) {
+        console.log("hui");
         content1.style.display = "none";
         content2.style.display = "block";
         content3.style.display = "none";
