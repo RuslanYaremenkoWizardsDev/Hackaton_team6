@@ -52,7 +52,7 @@
   height: 20px;
 }
 
-.active{
+.activeCreate{
   background-color: #E5AC55;
   border-radius: 6px;
 }
@@ -63,4 +63,8 @@
 
 #admin__block{
   display: none;
+}
+
+#UserNameInput_SignUp, #PasswordInput_SignUp, #ConfirmPasswordInput, #AdminNameInput_SignUp, #AdminPasswordInput_SignUp, #AdminConfirmPasswordInput, #AdminKey{
+  color: white;
 }
