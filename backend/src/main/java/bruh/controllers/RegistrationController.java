@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import static bruh.util.constants.PostMapping.REGISTRATION_MAPPING;
 
 @RestController
-@CrossOrigin(value = "http://localhost:4080")
+@CrossOrigin(value = "http://localhost:7070")
 public class RegistrationController {
     private final RegistrationService registrationService;
 

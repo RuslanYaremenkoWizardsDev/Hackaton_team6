@@ -23,6 +23,5 @@ public class UserDto {
     @Pattern(regexp = PASSWORD_REG_EXP, message = PASSWORD_VALIDATE_MESSAGE)
     private String password;
 
-    @NotNull
     private String role;
 }

@@ -16,7 +16,7 @@ import static bruh.util.constants.PostMapping.AUTHORIZATION_MAPPING;
 
 @Slf4j
 @RestController
-@CrossOrigin(value = "http://localhost:4080")
+@CrossOrigin(value = "http://localhost:7070")
 public class AuthorizationController {
     private final AuthorizationService authorizationService;
 
