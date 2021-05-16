@@ -1,6 +1,7 @@
 @import 'footer';
 @import 'variables';
 @import 'modalWindow';
+@import 'tabs';
 .content{
     width: 80%;
     height: 590px;
@@ -200,10 +201,7 @@
         margin: -5% 7%;
     }
 }
-/*.bg{
-    opacity: 0.4;
-    visibility: visible;
-}*/
+
 
 
 

@@ -93,98 +93,59 @@
             </div>
         </div>
     </div>
-    <div class="content" id="content">
-        <div class="content__block--left block-dropdownn">
-            <div class="block-dropdownn__bases container-databases">
-                <label class="container-databases__bases--name">Data Bases</label>
-                <div class="container-databases__dropdown">
-                    <button class="container-databases__dropdown--slct" id="databases-btn" value="mysql">MySQL<img class="arrow" src="img/arrow.png"></button>
-                    <div class="container-databases__dropdown--content" id="options">
-                        <div class="content-hover" value="postgresql">PostgreSQL</div>
-                        <div class="content-hover" value="h2">H2</div>
-                        <div class="content-hover" value="mongodb">MongoDB</div>
-                        <div class="content-hover" value="redis">Redis</div>
-                        <div class="content-hover" value="cassandra">Cassandra</div>
-                        <div class="content-hover" value="graphbd">GraphDB</div>
-                    </div>
+<!--    <form>-->
+<!--        <input class="output input" type="search" required placeholder="Last name">-->
+<!--        <button type="submit" value="">&#128269;</button>-->
+<!--    </form>-->
+<!--    </div>-->
+<!--    <div class="panel__search">-->
+<!--        <form>-->
+<!--            <input class="output input" type="search" required placeholder="First name">-->
+<!--            <button type="submit" value="">&#128269;</button>-->
+<!--        </form>-->
+            <div class="tabs">
+                <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+                <label for="tab-btn-1">Tournaments</label>
+                <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+                <label for="tab-btn-2">Create tournaments</label>
+                <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+                <label for="tab-btn-3">Stats</label>
+
+                <div id="content-1" class = '"table-name'>
+                    <div class = "table__name__item --left-top small "> Name</div>
+                    <div class="table__name__item">Mode</div>
+                    <div class="table__name__item">Place</div>
+                    <div class="table__name__item small">StartDate</div>
+                    <div class="table__name__item small">LastRegDate</div>
+                    <div class="table__name__item">State</div>
+                    <div class="table__name__item">Level</div>
+                    <div class="table__name__item">Participants</div>
+                    <div class="table__name__item --right-top"></div>
                 </div>
-            </div>
-            <div class="block-dropdownn__bases container-databases">
-                <label class="container-databases__bases--name">Sorting by</label>
-                <div class="container-databases__dropdown">
-                    <button class="container-databases__dropdown--slct" id="sorting-btn" value="id">Id<img class="arrow" src="img/arrow.png"></button>
-                    <div class="container-databases__dropdown--content" id="sorting-by">
-                        <div class="content-hover" value="firstName">First name</div>
-                        <div class="content-hover" value="lastName">Last name</div>
-                        <div class="content-hover" value="age">Age</div>
-                        <div class="content-hover" value="city">City</div>
-                        <div class="content-hover" value="phoneNumber">Phone number</div>
-                        <div class="content-hover" value="email">Email</div>
-                        <div class="content-hover" value="companyName">Company name</div>
-                    </div>
+                <div class="table__main">
+                    <div class="table__main__item  small">ff</div>
+                    <div class="table__main__item">ff</div>
+                    <div class="table__main__item">ff</div>
+                    <div class="table__main__item small">ff</div>
+                    <div class="table__main__item small">ff</div>
+                    <div class="table__main__item">ff</div>
+                    <div class="table__main__item">ff</div>
+                    <div class="table__main__item">ff<img class="delete-item" src="./img/delete.png" alt=""></div>
                 </div>
-            </div>
-        </div>
-        <div class="content__block--right block">
-            <div class="block__main">
-                <div class="block__main--panel panel">
-                    <button class="panel__btn --create">Create <img class="panel__btn--img" src="img/create.png" alt=""> </button>
-                    <button class="panel__btn --update">Update <img class="panel__btn--img" src="img/update.png" alt=""></button>
-                    <button class="panel__btn --delete">Delete <img class="panel__btn--img" src="img/delete.png" alt=""></button>
-                    <button class="panel__btn --clear" id="clear-all">ClearAll <img class="panel__btn--img" src="img/clear-all.png" alt=""></button>
-                    <div class="panel__search">
-                        <form>
-                          <input class="output input" type="search" required placeholder="Last name">
-                          <button type="submit" value="">&#128269;</button>
-                        </form>
-                    </div>
-                    <div class="panel__search">
-                        <form>
-                          <input class="output input" type="search" required placeholder="First name">
-                          <button type="submit" value="">&#128269;</button>
-                        </form>
-                    </div>
+                <div id="content-2">
+                    Содержимое 2...
                 </div>
-                <div class="block__main--table table">
-                    <div class="table__name">
-                        <div class="table__name__item --left-top small ">id</div>
-                        <div class="table__name__item">Fname</div>
-                        <div class="table__name__item">Lname</div>
-                        <div class="table__name__item small">age</div>
-                        <div class="table__name__item small">city</div>
-                        <div class="table__name__item">phoneNumber</div>
-                        <div class="table__name__item">email</div>
-                        <div class="table__name__item --right-top">companyName</div>
-                    </div>
-                    <div class="table__main">
-                        <div class="table__main__item  small">ff</div>
-                        <div class="table__main__item">ff</div>
-                        <div class="table__main__item">ff</div>
-                        <div class="table__main__item small">ff</div>
-                        <div class="table__main__item small">ff</div>
-                        <div class="table__main__item">ff</div>
-                        <div class="table__main__item">ff</div>
-                        <div class="table__main__item">ff<img class="delete-item" src="img/delete.png" alt=""></div>
-                    </div>
-                    <div class="table__main">
-                        <div class="table__main__item --left-bottom small"></div>
-                        <div class="table__main__item"></div>
-                        <div class="table__main__item"></div>
-                        <div class="table__main__item small"></div>
-                        <div class="table__main__item small"></div>
-                        <div class="table__main__item"></div>
-                        <div class="table__main__item"></div>
-                        <div class="table__main__item --right-bottom"><img class="delete-item" src="img/delete.png" alt=""></div>
-                    </div>
+                <div id="content-3">
+                    Содержимое 3...
                 </div>
-            </div>
-        </div>
-    </div>
+
+
+
 <footer>
     <div class="block-footer">
-        <p class="block-footer__text">ByDefault project</p>
+        <p class="block-footer__text">Bruh project </p>
         <div class="block-footer--line-vertival"></div>
-        <p class="block-footer__text">2021</p>
+        <p class="block-footer__text"> 2021</p>
     </div>
 </footer>
 </body>
