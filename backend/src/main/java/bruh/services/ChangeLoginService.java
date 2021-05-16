@@ -3,9 +3,7 @@ package bruh.services;
 import bruh.entity.User;
 import bruh.exceptions.InvalidCredentialsException;
 import bruh.repo.IPostgresRepo;
-import bruh.util.encoder.PasswordEncoder;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
@@ -13,26 +11,20 @@ import static bruh.util.constants.LoggerMessages.*;
 
 @Slf4j
 @Service
-public class ForgotPasswordService {
+public class ChangeLoginService {
     private final IPostgresRepo iPostgresRepo;
-    private final PasswordEncoder passwordEncoder;
 
-    @Autowired
-    public ForgotPasswordService(IPostgresRepo iPostgresRepo, PasswordEncoder passwordEncoder) {
+    public ChangeLoginService(IPostgresRepo iPostgresRepo) {
         this.iPostgresRepo = iPostgresRepo;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
-    public void restorePass(String login, String password, String secretWord) {
-        password = passwordEncoder.encode(password);
+    public void toChangeLogin(String login, String newLogin) {
         User updateUser = iPostgresRepo.findUserByLogin(login).orElseThrow(()
                 -> new InvalidCredentialsException(String.format(USER_WAS_NOT_FOUND, login)));
-        if (secretWord.equals(updateUser.getSecretWord())) {
+        if (login.equals(updateUser.getLogin())) {
             log.info(String.format(SUCCESSFULLY_CHANGE_LOGIN, login));
-            updateUser.setPassword(passwordEncoder.encode(password));
+            updateUser.setLogin(newLogin);
         }
     }
 }
-
-
