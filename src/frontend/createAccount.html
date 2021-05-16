@@ -15,19 +15,20 @@
                 <img src="img/logoWhite.png">
                 <h2 class="block__left--name">Brah</h2>
             </div>
-            <a href="signIn.html">NEXT</a>
+            <a href="signIn.html">NEXT </a>
+            <a href="index.html"> PREV</a>
             <div class="block__right container-dropdwn">
                 <div class="container-dropdwn__dropdown">
                     <button class="dropbtn btn" id="localization-switch">
                         En
                     </button>
-                    <div class="dropdown-content" id="dropdown-languages">
+                    <div id="dropdown-content" >
                         <button class="dropdown-content btn-modal">Russian</button>
                         <hr>
                         <button class="dropdown-content btn-modal">English</button>
                     </div>
                 </div>
-                <button class="topic btn"><img class="topic" src="/img/header-light-mode-logo.png" alt=""></button>
+                <button class="topic btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
             </div>
         </div>
     </div>
@@ -117,12 +118,17 @@
             </div>
         </div>
     </main>
-<!--    <footer>-->
-<!--        <div class="block-footer">-->
-<!--            <p class="block-footer__text">ByDefault project</p>-->
-<!--            <div class="block-footer&#45;&#45;line-vertival"></div>-->
-<!--            <p class="block-footer__text">2021</p>-->
-<!--        </div>-->
-<!--    </footer>-->
+<script>
+    const localizationSwitch = document.getElementById('localization-switch');
+    const dropdownLang = document.getElementById('dropdown-content');
+
+    localizationSwitch.addEventListener('click', function (e) {
+    dropdownLang.style.display = "block";
+    });
+
+    dropdownLang.addEventListener('click', function (e) {
+    dropdownLang.style.display = "none";
+    });
+</script>
 </body>
 </html>

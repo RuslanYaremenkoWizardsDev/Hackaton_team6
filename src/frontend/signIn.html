@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark" id="BigBody">
     <header>
         <div class="container">
             <div class="container__name block">
@@ -15,7 +15,8 @@
                     <img src="img/logoWhite.png">
                     <h2 class="block__left--name">Brah</h2>
                 </div>
-                <a href="createAccount.html">NEXT</a>
+                <a href="createAccount.html">NEXT </a>
+                <a href="index.html"> PREV</a>
                 <div class="block__right container-dropdwn">
                     <div class="container-dropdwn__dropdown">
                         <button class="dropbtn btn" id="localization-switch">
@@ -27,12 +28,13 @@
                             <button class="dropdown-content btn-modal">English</button>
                         </div>
                     </div>
-                    <button class="topic btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
+                    <button class="topic btn" id="modeSwitchToLight"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
+                    <button class="topic btn" id="modeSwitchToDark"><img class="topic" src="img/header-dark-mode-logo.png" alt=""></button>
                 </div>
             </div>
         </div>
     </header>
-    <main>
+    <main id="main">
         <div class="signIn-form">
             <div class="form__sign">
                 SIGN IN
@@ -74,6 +76,23 @@
     <script>
         const localizationSwitch = document.getElementById('localization-switch');
         const dropdownLang = document.getElementById('dropdown-content');
+        const lightModeButton = document.getElementById("modeSwitchToLight");
+        const darkModeButton = document.getElementById("modeSwitchToDark");
+        const bodyPg = document.getElementById("BigBody");
+
+        lightModeButton.addEventListener('click', function (e) {
+            bodyPg.classList.add('light');
+            bodyPg.classList.remove('dark');
+            lightModeButton.style.display = "none";
+            darkModeButton.style.display = "block"
+        });
+
+        darkModeButton.addEventListener('click', function (e) {
+            bodyPg.classList.add('dark');
+            bodyPg.classList.remove('light');
+            lightModeButton.style.display = "block";
+            darkModeButton.style.display = "none"
+        });
 
         localizationSwitch.addEventListener('click', function (e) {
             dropdownLang.style.display = "block";

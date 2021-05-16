@@ -17,6 +17,7 @@ module.exports = {
         createAccount: './js/createAccount.js',
         signIn: './js/signIn.js',
         mainPage: './js/mainPage.js',
+        localization: './js/localization.js',
     },
     output: {
         filename: `./js/${filename('js')}`, // генерация названия файлов из функции

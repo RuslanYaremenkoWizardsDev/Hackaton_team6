@@ -15,39 +15,31 @@
    
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="container__name block">
-                <div class="block__left">
-                    <img class="block__left--logo" src="img/header-logo.png">
-                    <h2 class="block__left--name">ByDefault</h2>  
-                </div>
-                <a href="signIn.html">NEXT</a>
-                <div class="block__right container-dropdwn">
-                    <div class="container-dropdwn__dropdown">
-                        <button class="dropbtn btn" id="localization-switch">
-                            En
-                        </button>
-                        <div class="dropdown-content" id="dropdown-languages">
-                            <button class="dropdown-content--btn">Russian</button>
-                            <hr>
-                            <button class="dropdown-content--btn">English</button>
-                        </div>
+<header>
+    <div class="container">
+        <div class="container__name block">
+            <div class="block__left">
+                <img src="img/logoWhite.png">
+                <h2 class="block__left--name">Brah</h2>
+            </div>
+            <a href="createAccount.html">NEXT </a>
+            <a href="signIn.html"> PREV</a>
+            <div class="block__right container-dropdwn">
+                <div class="container-dropdwn__dropdown">
+                    <button class="dropbtn btn" id="localization-switch">
+                        En
+                    </button>
+                    <div id="dropdown-content" >
+                        <button class="dropdown-content btn-modal">Russian</button>
+                        <hr>
+                        <button class="dropdown-content btn-modal">English</button>
                     </div>
-                    <button class="btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
-                    <div class="container-dropdwn__dropdown">
-                        <button class=" btn" id="setting-btn"><img class="setting" src="img/setting-light.png" alt=""></button>
-                        <div class="dropdown-content" id="settingDropdown">
-                            <button class="dropdown-content--btn" id="change-password">Change password</button>
-                            <hr>
-                            <button class="dropdown-content--btn" id="change-login">Change login</button>
-                        </div>
-                    </div>
-                    <button class="btn"><img class="signout" src="img/sing-out-light.png" alt=""></button>
                 </div>
+                <button class="topic btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
             </div>
         </div>
-    </header>
+    </div>
+</header>
     <div class="window-password" id="window-modal">
         <div class="window-password__modal-password" id="modal-password">
             <div class="window-password__modal-password--img" id="close-modal-password">&#10006;</div>
@@ -180,12 +172,17 @@
             </div>
         </div>
     </div>
-<footer>
-    <div class="block-footer">
-        <p class="block-footer__text">ByDefault project</p>
-        <div class="block-footer--line-vertival"></div>
-        <p class="block-footer__text">2021</p>
-    </div>
-</footer>
+<script>
+    const localizationSwitch = document.getElementById('localization-switch');
+    const dropdownLang = document.getElementById('dropdown-content');
+
+    localizationSwitch.addEventListener('click', function (e) {
+        dropdownLang.style.display = "block";
+    });
+
+    dropdownLang.addEventListener('click', function (e) {
+        dropdownLang.style.display = "none";
+    });
+</script>
 </body>
 </html>

@@ -4,7 +4,11 @@
   padding: 0;
 }
 
-body{
+.light{
+  background-color: white;
+}
+
+.dark{
   background-color: #23282D;
 }
 
@@ -120,4 +124,8 @@ button{
 .GuestButton:hover{
   box-shadow: 0px 4px 4px white;
   transition: 0.4s;
+}
+
+#modeSwitchToDark{
+  display: none;
 }
