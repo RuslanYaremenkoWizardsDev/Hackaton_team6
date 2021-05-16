@@ -40,83 +40,143 @@
         </div>
     </div>
 </header>
-<div class="panel__search">
-    <form>
-        <input class="output input" type="search" required placeholder="Search by start date (from, to)">
-        <button type="submit" value="">&#128269;</button>
-    </form>
-    <form>
-        <input class="output input" type="search" required placeholder="Search by reg date (from, to)">
-        <button type="submit" value="">&#128269;</button>
-    </form>
-    <form>
-        <input class="output input" type="search" required placeholder="Search by state">
-        <button type="submit" value="">&#128269;</button>
-    </form>
-    <div class="tabs">
-        <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
-        <label for="tab-btn-1">Tournaments</label>
-        <input type="radio" name="tab-btn" id="tab-btn-2" value="">
-        <label for="tab-btn-2">Create tournaments</label>
-        <input type="radio" name="tab-btn" id="tab-btn-3" value="">
-        <label for="tab-btn-3">Stats</label>
+<main>
+    <div class="main-block">
+        <div class="search">
+            <div class="search__input fg--search">
+                <input class="search__input--input" required placeholder="Search by start date (from, to)">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="search__input fg--search">
+                <input class="search__input--input" required placeholder="Search by reg date (from, to)">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="search__input fg--search">
+                <input class="search__input--input"  required placeholder="Search by state">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="folders">
+            <button class="content-switch active" id="tournament">Tournaments</button>
+            <button class="content-switch" id="createTour">Create tournament</button>
+            <button class="content-switch" id="stats">Stats</button>
+        </div>
+        <div class="content1" id="content1">
+            <section>
+                <div class="container" class = 'table-name'>
+                    <div class="row">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Mode</th>
+                                <th scope="col">StartDate</th>
+                                <th scope="col">LastRegDate</th>
+                                <th scope="col">State</th>
+                                <th scope="col">Level</th>
+                                <th scope="col">Participants</th>
+                                <th scope="col">Scenario</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td data-label="Tournament">Super Cup</td>
+                                <td data-label="Mode">Cup</td>
+                                <td data-label="StartDate">16.05.2021 16:00</td>
+                                <td data-label="LastRegDate">18.05.2021 18:00</td>
+                                <td data-label="State">In progress</td>
+                                <td data-label="Level">Middle</td>
+                                <td data-label="Participants">6 / 32 players</td>
+                                <td data-label="Scenario">one-match</td>
+                                <td data-label="Actions">Image</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Tournament">Super Cup</td>
+                                <td data-label="Mode">Cup</td>
+                                <td data-label="StartDate">16.05.2021 16:00</td>
+                                <td data-label="LastRegDate">18.05.2021 18:00</td>
+                                <td data-label="State">In progress</td>
+                                <td data-label="Level">Middle</td>
+                                <td data-label="Participants">6 / 32 players</td>
+                                <td data-label="Scenario">one-match</td>
+                                <td data-label="Actions">Image</td>
+                            </tr>
 
-      <div id="content-1" class = 'table-name'>
-         <section>
-            <div class="container" id="content-1" class = 'table-name'>
-                <div class="row">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Mode</th>
-                            <th scope="col">StartDate</th>
-                            <th scope="col">LastRegDate</th>
-                            <th scope="col">State</th>
-                            <th scope="col">Level</th>
-                            <th scope="col">Participants</th>
-                            <th scope="col">Scenario</th>
-                            <th scope="col">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td data-label="Tournament">Super Cup</td>
-                            <td data-label="Mode">Cup</td>
-                            <td data-label="StartDate">16.05.2021 16:00</td>
-                            <td data-label="LastRegDate">18.05.2021 18:00</td>
-                            <td data-label="State">In progress</td>
-                            <td data-label="Level">Middle</td>
-                            <td data-label="Participants">6 / 32 players</td>
-                            <td data-label="Scenario">one-match</td>
-                            <td data-label="Actions">Image</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Tournament">Super Cup</td>
-                            <td data-label="Mode">Cup</td>
-                            <td data-label="StartDate">16.05.2021 16:00</td>
-                            <td data-label="LastRegDate">18.05.2021 18:00</td>
-                            <td data-label="State">In progress</td>
-                            <td data-label="Level">Middle</td>
-                            <td data-label="Participants">6 / 32 players</td>
-                            <td data-label="Scenario">one-match</td>
-                            <td data-label="Actions">Image</td>
-                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="content2" id="content2">
+            <div class="content2" id="content-2" >
+                <div class="left-side-content2">
 
-                        </tbody>
-                    </table>
+                </div>
+                <div class="right-side-content2">
+
                 </div>
             </div>
         </div>
-        </section>
-
-        <div id="content-2">
-            Содержимое 2...
+        <div class="content3" id="content3">
+            <section class="tournaments">
+                <h2>TOURNAMENTS</h2>
+                <div class="container container3" >
+                    <div class="row container3">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th scope="col">Tournament mode</th>
+                                <th scope="col">Finished</th>
+                                <th scope="col">Closed</th>
+                                <th scope="col">Canceled</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td data-label="Tournament mode">Super Cup</td>
+                                <td data-label="Finished">Cup</td>
+                                <td data-label="Closed">16.05.2021 16:00</td>
+                                <td data-label="Canceled">18.05.2021 18:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="players">
+                <h2 id="h2players">PLAYERS</h2>
+                <div class="container container3">
+                    <div class="row container3">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th scope="col">Email/Login</th>
+                                <th scope="col">Games</th>
+                                <th scope="col">Wins</th>
+                                <th scope="col">Drows</th>
+                                <th scope="col">Loses</th>
+                                <th scope="col">Cup Wins</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td data-label="Email/Login">Super Cup</td>
+                                <td data-label="Games">Cup</td>
+                                <td data-label="Wins">16.05.2021 16:00</td>
+                                <td data-label="Drows">18.05.2021 18:00</td>
+                                <td data-label="Loses">16.05.2021 16:00</td>
+                                <td data-label="Cup Wins">18.05.2021 18:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div id="content-3">
-            Содержимое 3...
-        </div>
-
+    </div>
+</main>
         <script>
     const localizationSwitch = document.getElementById('localization-switch');
     const dropdownLang = document.getElementById('dropdown-content');
@@ -127,6 +187,42 @@
 
     dropdownLang.addEventListener('click', function (e) {
         dropdownLang.style.display = "none";
+    });
+
+    const tournament = document.getElementById("tournament");
+    const crateTour = document.getElementById("createTour");
+    const stats = document.getElementById("stats");
+    const content1 = document.getElementById("content1");
+    const content2 = document.getElementById("content2");
+    const content3 = document.getElementById("content3");
+    const maincontent = document.getElementById("main-block");
+
+    tournament.addEventListener("click",function (e) {
+        content1.style.display = "block";
+        content2.style.display = "none";
+        content3.style.display = "none";
+        crateTour.classList.remove("active");
+        stats.classList.remove("active");
+        tournament.classList.add("active");
+
+    });
+
+    crateTour.addEventListener("click",function (e) {
+        content1.style.display = "none";
+        content2.style.display = "block";
+        content3.style.display = "none";
+        tournament.classList.remove("active");
+        stats.classList.remove("active");
+        crateTour.classList.add("active");
+    });
+
+    stats.addEventListener("click",function (e) {
+        content1.style.display = "none";
+        content2.style.display = "none";
+        content3.style.display = "block";
+        tournament.classList.remove("active");
+        crateTour.classList.remove("active");
+        stats.classList.add("active");
     });
 </script>
 </body>
