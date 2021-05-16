@@ -1,0 +1,49 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'checkstyle'
+}
+
+group 'org.bruh'
+version '1'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+checkstyle {
+    toolVersion = "8.0"
+    maxErrors = 0
+    maxWarnings = 0
+}
+
+ext {
+    springCloudVersion = '2020.0.0'
+    springStarterValidationVersion = '2.4.5'
+    lombokVersion = '1.18.12'
+    jsonwebtokenVersion = '0.9.1'
+}
+
+dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.springframework.boot:spring-boot-starter-validation:${springStarterValidationVersion}"
+    implementation group: 'org.hibernate', name: 'hibernate-validator', version: '7.0.1.Final'
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation "org.projectlombok:lombok:${lombokVersion}"
+    implementation "io.jsonwebtoken:jjwt:${jsonwebtokenVersion}"
+    compileOnly 'javax.xml.bind:jaxb-api:2.1'
+}
+
+test {
+    useJUnitPlatform()
+}
