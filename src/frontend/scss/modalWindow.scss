@@ -1,0 +1,243 @@
+@import 'variables';
+.window-password{
+    position: fixed;
+    display: flex;
+    width: 80%;
+    height: 590px;
+    top: 90px;
+    left: 10%;
+    background: rgba($color:$primary-color-bg, $alpha: 0.6);
+    opacity: 0;
+    visibility: hidden;
+    &__modal-password{
+        position: absolute;
+        width: 372px;
+        height: 320px;
+        background: $color-modal-window-bg;
+        top: 20%;
+        left: 39%;
+        border-radius: 8px;
+        &--img{
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin: 5% 5% 0 0;
+        }
+        &--img:hover{
+            color: rgb(15, 120, 134);
+        }
+        &__container{
+            width: 90%;
+            height: 70%;
+            margin: 15% auto;
+            &--name{
+                text-align: center;
+                text-transform: uppercase;
+                margin-bottom: 5%;
+            }
+            &--lbl{
+                font-size: 14px;
+                line-height: 16px;
+                text-transform: uppercase;
+                color: $color-modal-window-lbl;
+            }
+            &__block{
+                position: relative;
+                display: flex;
+                width: 90%;
+                margin: 2% auto;
+                &--inpt{
+                    font-size: 18px;
+                    border: none;
+                    outline: none;
+                    background: $color-modal-window-inpt-bg;
+                    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5) inset;
+                    border-radius: 10px;
+                    padding: 2%;
+                }
+                &--show-password{
+                    width: 20px;
+                    height: 20px;
+                    margin: auto;
+                    margin-left: -10%;
+                    z-index: 4;
+                    background: forestgreen;
+                }
+            }
+            &--btn{
+                height: 34px;
+                margin: 8% auto;
+                border: none;
+                outline: none;
+                border-radius: 3px;
+                color: black;
+                font-size: 24px;
+                background: $color-modal-window-btn;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            &--link{
+                color: $color-modal-window-link;
+                text-transform: uppercase;
+                text-decoration: underline;
+                font-size: 12px;
+                line-height: 14px;
+                display: block;
+                margin: 7% auto;
+            }
+            &--link:hover{
+                    color: rgb(15, 120, 134);
+            }
+        }
+    }
+}
+.view{
+    background: fuchsia;
+}
+.elem-inpt{
+    width: 100%;
+}
+.window-login{
+    position: fixed;
+    display: flex;
+    width: 80%;
+    height: 590px;
+    top: 90px;
+    left: 10%;
+    background: rgba($color:$primary-color-bg, $alpha: 0.6);
+    opacity: 0;
+    visibility: hidden;
+    &__modal-login{
+        position: absolute;
+        width: 372px;
+        height: 260px;
+        background: $color-modal-window-bg;
+        top: 30%;
+        left: 39%;
+        border-radius: 8px;
+        &--img{
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin: 5% 5% 0 0;
+            cursor: pointer;
+        }
+        &__container{
+            width: 90%;
+            height: 80%;
+            margin: 15% auto;
+            &--name{
+                text-align: center;
+                text-transform: uppercase;
+            }
+            &--lbl{
+                font-size: 14px;
+                line-height: 16px;
+                text-transform: uppercase;
+                color: rgba(117, 117, 117, 1);
+            }
+            &--inpt{
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background: $color-modal-window-inpt-bg;
+                box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5) inset;
+                border-radius: 10px;
+                padding: 2%;
+            }
+            &--btn{
+                height: 34px;
+                margin: 8% auto;
+                border: none;
+                outline: none;
+                border-radius: 3px;
+                color: black;
+                font-size: 24px;
+                background: $color-modal-window-btn;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                cursor: pointer;
+            }
+            &--link{
+                color: $color-modal-window-link;
+                text-transform: uppercase;
+                text-decoration: underline;
+                font-size: 12px;
+                line-height: 14px;
+                display: block;
+                margin: 4% auto;
+            }
+            &--link:hover{
+                    color: rgb(15, 120, 134);
+            } 
+        }
+    }
+}
+.modal-clear{
+    position: fixed;
+    display: flex;
+    width: 80%;
+    height: 590px;
+    top: 90px;
+    left: 10%;
+    background: rgba($color:$primary-color-bg, $alpha: 0.6);
+    opacity: 0;
+    visibility: hidden;
+    &__modal{
+        width: 372px;
+        height: 200px;
+        margin: auto;
+        background: $color-modal-window-bg;
+        border-radius: 8px;
+        &--img{
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin: 5% 5% 0 0;
+            cursor: pointer;
+        }
+        &__container{
+            width: 90%;
+            height: 80%;
+            margin: 15% auto;
+            &--name{
+                text-align: center;
+                text-transform: uppercase;
+                font-size: xx-large;
+            }
+            &__buttons{
+                width: 90%;
+                margin: 10% auto;
+                &--btn{
+                    height: 43px;
+                    width: 45%;
+                    border: none;
+                    outline: none;
+                    border-radius: 3px;
+                    color: black;
+                    font-size: 24px;
+                    background: $color-modal-window-btn;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.right{
+    background: rgba(197, 22, 85, 1);
+    float: right;
+
+}
+.elem{
+    width: 90%;
+    margin: 4% auto 0 auto;
+    display: block;
+}
+
+.show-modal-clear{
+    opacity: 1;
+    visibility: visible;
+}
+.show-modal{
+    opacity: 1;
+    visibility: visible;
+}

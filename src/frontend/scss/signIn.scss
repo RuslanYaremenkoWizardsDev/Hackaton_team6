@@ -1,0 +1,122 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #23282D;
+}
+
+input{
+  width: 80%;
+  height: 45px;
+  box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.25);
+  background: #212527;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  padding-left: 14px;
+}
+
+input::placeholder{
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(143, 143, 143, 0.3);
+}
+
+a{
+  color: cornflowerblue;
+}
+
+button{
+  cursor: pointer;
+}
+
+.block__left--logo{
+  height: 60px;
+  width: 60px;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.signIn-form__password i {
+  margin-top: 1%;
+  margin-left: -2.5%;
+  cursor: pointer;
+  color: rgba(143, 143, 143, 0.3);
+  position: absolute;
+}
+
+.signIn-form{
+  width: 28%;
+  height: 380px;
+  margin: 5% auto 3% auto;
+  padding: auto;
+  text-align: center;
+  background-color: #23272A;
+  box-shadow:0 0 10px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.signIn-form__sign{
+  padding-top: 20px;
+  font-size: 36px;
+  color: white;
+}
+
+#SignInButton{
+  background: #46CD7C;
+  width: 40%;
+  margin-top: 30px;
+  height: 45px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 24px;
+}
+
+#GuestButton{
+  background: #85BDE0;
+  width: 30%;
+  margin-top: 30px;
+  height: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.form__input-name{
+  width: 80%;
+  margin:20px auto 10px auto;
+  font-size: 14px;
+  text-align: left;
+  color: #757575;
+  font-family: 'Play', sans-serif;
+}
+
+.signIn-form__lastWords{
+  color: #757575;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+#SignInButton:hover {
+  box-shadow: 0px 4px 4px white;
+  transition: 0.4s;
+}
+#GuestButton:hover{
+  box-shadow: 0px 4px 4px white;
+  transition: 0.4s;
+}

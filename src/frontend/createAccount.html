@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <!-- <link rel="stylesheet" href="../css/createAccount.css"> -->
+    <!-- <link rel="stylesheet" href="../css/header.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="container__name block">
+            <div class="block__left">
+                <div class="block__left--logo"></div>
+                <h2 class="block__left--name">Brah</h2>
+            </div>
+            <a href="signIn.html">NEXT</a>
+            <div class="block__right container-dropdwn">
+                <div class="container-dropdwn__dropdown">
+                    <button class="dropbtn btn" id="localization-switch">
+                        En
+                    </button>
+                    <div class="dropdown-content" id="dropdown-languages">
+                        <button class="dropdown-content btn-modal">Russian</button>
+                        <hr>
+                        <button class="dropdown-content btn-modal">English</button>
+                    </div>
+                </div>
+                <button class="topic btn"><img class="topic" src="/img/header-light-mode-logo.png" alt=""></button>
+            </div>
+        </div>
+    </div>
+</header>
+    <main class="main">
+        <div class="signUp-form">
+            <div class="signUp-form__sign">
+                REGISTRATION
+            </div>
+            <div class="form__input-name">
+                LOGIN
+            </div>
+            <div class="signUp-form__input">
+                <input class="input__field" id="UserNameInput_SignUp" placeholder="Login">
+            </div>
+            <div class="form__input-name">
+                PASSWORD
+            </div>
+            <div class="container__input">
+                <input class="input__field" id="PasswordInput_SignUp" type="password" placeholder="Password">
+                <i class="far fa-eye" id="togglePassword"></i>
+            </div>
+            <div class="form__input-name">
+                CONFIRM PASSWORD
+            </div>
+            <div class="container__input">
+                <input class="input__field" id="ConfirmPasswordInput" type="password" placeholder="Confirm password">
+            </div>
+            <div class="container__button">
+                <button id="SignUpButton" >Sign Up</button>
+            </div>
+            <div class="container__lastWords">
+                Already Registered <a href="signIn.html">Sign In</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="block-footer">
+            <p class="block-footer__text">ByDefault project</p>
+            <div class="block-footer--line-vertival"></div>
+            <p class="block-footer__text">2021</p>
+        </div>
+    </footer>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#PasswordInput_SignUp');
+        const confpassword = document.querySelector('#ConfirmPasswordInput');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type1 = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            const type2 = confpassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type1);
+            confpassword.setAttribute('type', type2);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
