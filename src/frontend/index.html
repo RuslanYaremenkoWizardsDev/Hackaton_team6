@@ -93,16 +93,20 @@
             </div>
         </div>
     </div>
-<!--    <form>-->
-<!--        <input class="output input" type="search" required placeholder="Last name">-->
-<!--        <button type="submit" value="">&#128269;</button>-->
-<!--    </form>-->
-<!--    </div>-->
-<!--    <div class="panel__search">-->
-<!--        <form>-->
-<!--            <input class="output input" type="search" required placeholder="First name">-->
-<!--            <button type="submit" value="">&#128269;</button>-->
-<!--        </form>-->
+    <form>
+        <input class="output input" type="search" required placeholder="Search by start date (from, to)">
+        <button type="submit" value="">&#128269;</button>
+    </form>
+    </div>
+    <div class="panel__search">
+        <form>
+            <input class="output input" type="search" required placeholder="Search by reg date (from, to)">
+            <button type="submit" value="">&#128269;</button>
+        </form>
+        <form>
+            <input class="output input" type="search" required placeholder="Search by state">
+            <button type="submit" value="">&#128269;</button>
+        </form>
             <div class="tabs">
                 <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
                 <label for="tab-btn-1">Tournaments</label>
@@ -111,27 +115,18 @@
                 <input type="radio" name="tab-btn" id="tab-btn-3" value="">
                 <label for="tab-btn-3">Stats</label>
 
-                <div id="content-1" class = '"table-name'>
-                    <div class = "table__name__item --left-top small "> Name</div>
-                    <div class="table__name__item">Mode</div>
-                    <div class="table__name__item">Place</div>
-                    <div class="table__name__item small">StartDate</div>
-                    <div class="table__name__item small">LastRegDate</div>
-                    <div class="table__name__item">State</div>
-                    <div class="table__name__item">Level</div>
-                    <div class="table__name__item">Participants</div>
-                    <div class="table__name__item --right-top"></div>
+                <div id="content-1" class = 'table-name'>
+                    <tr class = "table__name__item --left-top small "><th> Name</th></tr>
+                    <tr class="table__name__item"><th>Mode</th></tr>
+                    <tr class="table__name__item"><th>Place</th></tr>
+                    <tr class="table__name__item"><th>StartDate</th></tr>
+                    <tr class="table__name__item"><th>LastRegDate</th></tr>
+                    <tr class="table__name__item"><th>State</th></tr>
+                    <tr class="table__name__item"><th>Level</th></tr>
+                    <tr class="table__name__item"><th>Participants</th></tr>
+                    <tr class="table__name__item"><th>Scenario</th></tr>
                 </div>
-                <div class="table__main">
-                    <div class="table__main__item  small">ff</div>
-                    <div class="table__main__item">ff</div>
-                    <div class="table__main__item">ff</div>
-                    <div class="table__main__item small">ff</div>
-                    <div class="table__main__item small">ff</div>
-                    <div class="table__main__item">ff</div>
-                    <div class="table__main__item">ff</div>
-                    <div class="table__main__item">ff<img class="delete-item" src="./img/delete.png" alt=""></div>
-                </div>
+
                 <div id="content-2">
                     Содержимое 2...
                 </div>
