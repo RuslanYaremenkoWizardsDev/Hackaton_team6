@@ -11,5 +11,4 @@ import java.util.Optional;
 public interface IPostgresRepo extends JpaRepository<User, Integer> {
 
     Optional<User> findUserByLogin(String login);
-
 }

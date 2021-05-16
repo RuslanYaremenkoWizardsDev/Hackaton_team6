@@ -16,7 +16,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.BindingResult;
+
 import java.util.stream.Stream;
+
 import static bruh.util.constants.LoggerMessages.USERNAME_IS_BUSY;
 import static bruh.util.constants.LoggerMessages.USER_WAS_NOT_FOUND;
 import static bruh.util.constants.ValidationMessages.FIELD_CANNOT_BE_NULL;
@@ -51,9 +53,9 @@ class AuthorizationControllerTest {
 
     private static Stream<Arguments> authorizeUserTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto("jeid", "qwerty", "user")),
-                Arguments.arguments(new UserDto("ufora", "asdfgh", "user")),
-                Arguments.arguments(new UserDto("trolan1", "123456", "user"))
+                Arguments.arguments(new UserDto("jeid", "qwerty", "user", "king")),
+                Arguments.arguments(new UserDto("ufora", "asdfgh", "user", "king")),
+                Arguments.arguments(new UserDto("trolan1", "123456", "user", "king"))
         );
     }
 
@@ -107,8 +109,8 @@ class AuthorizationControllerTest {
     static Stream<Arguments> authorizeUserExceptionTestNominal() {
         String errMsg = FIELD_CANNOT_BE_NULL;
         return Stream.of(
-                Arguments.arguments(new UserDto(null, "asdasdasd", "user"), errMsg),
-                Arguments.arguments(new UserDto("trolan", null, "user"), errMsg)
+                Arguments.arguments(new UserDto(null, "asdasdasd", "user", "king"), errMsg),
+                Arguments.arguments(new UserDto("trolan", null, "user", "king"), errMsg)
         );
     }
 

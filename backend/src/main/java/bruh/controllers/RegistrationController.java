@@ -29,7 +29,6 @@ public class RegistrationController {
             String errorMessage = bindingResult.getAllErrors().get(0).getDefaultMessage();
             throw new IncorrectUserFieldsException(errorMessage);
         }
-
-        registrationService.registerUser(new User(userDto.getLogin(), userDto.getPassword(), userDto.getRole()));
+        registrationService.registerUser(new User(userDto.getLogin(), userDto.getPassword(), userDto.getRole(), userDto.getSecretWord()));
     }
 }

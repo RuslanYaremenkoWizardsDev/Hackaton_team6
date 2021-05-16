@@ -28,10 +28,19 @@ public class User {
     @NotNull
     private String role;
 
+    private String secretWord;
+
     public User(String login, String password, String role) {
         this.login = login;
         this.password = password;
         this.role = role;
+    }
+
+    public User(String login, String password, String role, String secretWord) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+        this.secretWord = secretWord;
     }
 
 }

@@ -3,7 +3,6 @@ package bruh.entity;
 import bruh.util.enums.TournamentLevel;
 import bruh.util.enums.TournamentScenario;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;

@@ -4,28 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import static bruh.util.constants.RegularExpressions.LOGIN_REG_EXP;
 import static bruh.util.constants.RegularExpressions.PASSWORD_REG_EXP;
-import static bruh.util.constants.ValidationMessages.*;
+import static bruh.util.constants.ValidationMessages.FIELD_CANNOT_BE_NULL;
+import static bruh.util.constants.ValidationMessages.PASSWORD_VALIDATE_MESSAGE;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class ForgotPasswordDto {
 
     @NotBlank(message = FIELD_CANNOT_BE_NULL)
-    @Pattern(regexp = LOGIN_REG_EXP, message = LOGIN_VALIDATE_MESSAGE)
     private String login;
 
     @NotBlank(message = FIELD_CANNOT_BE_NULL)
     @Pattern(regexp = PASSWORD_REG_EXP, message = PASSWORD_VALIDATE_MESSAGE)
     private String password;
 
-    @NotNull
-    private String role;
-
-    @NotNull
+    @NotBlank(message = FIELD_CANNOT_BE_NULL)
     private String secretWord;
 }
