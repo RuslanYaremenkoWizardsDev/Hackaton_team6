@@ -42,22 +42,22 @@
                     LOGIN
                 </label>
                 <div class="signIn-form__input">
-                    <input id="LoginInput_SignIn" placeholder="Enter your login...">
+                    <input id="LoginInput_SignIn" placeholder="Enter your login..." tabindex="1">
                 </div>
             </div>
-            <div class="signIn-form__password">
+            <div class="form__password">
                 <label for="PasswordInput_SignIn" class="form__input-name">
                     PASSWORD
                 </label>
                 <div class="signIn-form__input">
-                    <input  id="PasswordInput_SignIn" placeholder="Enter your password..." type="password">
+                    <input  id="PasswordInput_SignIn" placeholder="Enter your password..." type="password" tabindex="2">
                    <i class="far fa-eye" id="togglePassword"></i>
                 </div>
 
             </div>
             <div class="signIn-form__submit-button">
-                <button id="SignInButton">Submit</button>
-                <button id="GuestButton">log in as guest</button>
+                <button class="SignInButton" tabindex="3">Submit</button>
+                <button class="GuestButton">log in as guest</button>
             </div>
             <div class="form__lastWords">
                 Need an account? <a href="createAccount.html">Register now</a>

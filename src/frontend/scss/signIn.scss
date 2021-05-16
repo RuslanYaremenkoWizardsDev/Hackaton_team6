@@ -37,7 +37,7 @@ button{
 }
 
 
-.signIn-form__password i {
+.form__password i {
   margin-top: 1%;
   margin-left: -2.5%;
   cursor: pointer;
@@ -47,7 +47,7 @@ button{
 
 .signIn-form{
   width: 28%;
-  height: 380px;
+  height: 370px;
   margin: 5% auto 3% auto;
   padding: auto;
   text-align: center;
@@ -64,7 +64,7 @@ button{
   color: white;
 }
 
-#SignInButton{
+.SignInButton{
   background: #46CD7C;
   width: 40%;
   margin-top: 30px;
@@ -77,7 +77,7 @@ button{
   font-size: 24px;
 }
 
-#GuestButton{
+.GuestButton{
   background: #85BDE0;
   width: 30%;
   margin-top: 30px;
@@ -108,11 +108,11 @@ button{
   margin-top: 15px;
 }
 
-#SignInButton:hover {
+.SignInButton:hover {
   box-shadow: 0px 4px 4px white;
   transition: 0.4s;
 }
-#GuestButton:hover{
+.GuestButton:hover{
   box-shadow: 0px 4px 4px white;
   transition: 0.4s;
 }
