@@ -23,6 +23,6 @@ public class UserDto {
     @Pattern(regexp = PASSWORD_REG_EXP, message = PASSWORD_VALIDATE_MESSAGE)
     private String password;
 
-    @NotNull
     private String role;
+    //{"alg":"HS256"}{"sub":"jeid","iat":1621172010,"exp":1621214310}4�=��d�M�;~:��ϵ0�g�`�8jTU�}
 }

@@ -25,7 +25,7 @@ public class User {
     @NotNull(message = FIELD_CANNOT_BE_NULL)
     private String password;
 
-    @NotNull
+    @NotNull(message = FIELD_CANNOT_BE_NULL)
     private String role;
 
     public User(String login, String password, String role) {

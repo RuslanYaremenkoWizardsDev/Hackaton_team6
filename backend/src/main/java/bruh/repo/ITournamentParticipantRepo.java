@@ -8,5 +8,8 @@ import java.util.List;
 @Repository
 public interface ITournamentParticipantRepo extends JpaRepository<TournamentParticipant, Long> {
     List<TournamentParticipant> findByIdTournament(long idTournament);
+
     List<Long> findByIdUser(TournamentParticipant tournamentParticipant);
+
+    Integer countTournamentParticipantByIdTournament(long idTournament);
 }

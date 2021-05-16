@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 import static bruh.util.constants.ValidationMessages.FIELD_CANNOT_BE_NULL;
 
@@ -20,10 +21,10 @@ import static bruh.util.constants.ValidationMessages.FIELD_CANNOT_BE_NULL;
 public class TournamentDto {
 
     @NotBlank(message = FIELD_CANNOT_BE_NULL)
-    @Max(value = 255, message = "Max name  symbols 255")
+    @Size(max = 255, min = 1, message = "Max name  symbols 255")
     private String name;
 
-    @Max(value = 10_000, message = "max description symbols 10_000")
+    @Size(max = 10000, min = 1, message = "max description symbols 10_000")
     private String description;
 
     private TournamentMode mode = TournamentMode.CUP;

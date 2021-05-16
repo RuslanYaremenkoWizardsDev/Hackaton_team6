@@ -29,6 +29,10 @@ public class AddParticipantsService {
     public void addNewParticipant(String tournamentName, String participantLogin) {
         Tournament tournament = iTournamentRepo.findByName(tournamentName).orElseThrow(()
                 -> new TournamentNotFoundException(String.format(TOURNAMENT_WAS_NOT_FOUND, tournamentName)));
+        int numberOfParticipants = iTournamentParticipantRepo.countTournamentParticipantByIdTournament(tournament.getId());
+        if (numberOfParticipants == tournament.getParticipants()) {
+
+        }
         User user = iUserRepo.findUserByLogin(participantLogin).orElseThrow(()
                 -> new InvalidCredentialsException(String.format(USER_WAS_NOT_FOUND, participantLogin)));
         long userId = user.getId();
