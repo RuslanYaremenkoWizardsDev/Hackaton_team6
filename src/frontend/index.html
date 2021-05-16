@@ -41,7 +41,7 @@
     </div>
 </header>
 <main>
-    <div class="main-block">
+    <div class="main-block" id="main-block">
         <div class="search">
             <div class="search__input fg--search">
                 <input class="search__input--input" required placeholder="Search by start date (from, to)">
@@ -55,6 +55,9 @@
                 <input class="search__input--input"  required placeholder="Search by state">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
+        </div>
+        <div class="clearAll">
+            <button id="clearAll">Clear All</button>
         </div>
         <div class="folders">
             <button class="content-switch active" id="tournament">Tournaments</button>
@@ -109,19 +112,41 @@
                 </div>
             </section>
         </div>
+
         <div class="content2" id="content2">
-            <div class="content2" id="content-2" >
-                <div class="left-side-content2">
-
+            <div class="content2flex">
+            <div class="rightCont">
+                <div   class="hui rightCont__label">
+                    Name:
                 </div>
-                <div class="right-side-content2">
-
+                <div class="rightCont__input">
+                    <input id="CreateTourName" placeholder="Enter your login..." >
+                </div>
+                <div   class="hui rightCont__label">
+                    Description:
+                </div>
+                <div class="rightCont__input">
+                    <input id="CreateTourDescription" placeholder="Enter your description..." >
+                </div>
+                <div   class="hui rightCont__label">
+                    Mode:
+                    <input type="checkbox" id="radioButton">
+                    <label for="radioButton" id="cupLabel">cup</label>
+                </div>
+                <div   class="hui rightCont__label">
+                    Place:
+                </div>
+                <div class="rightCont__input">
+                    <input id="CreateTourPlace" placeholder="Enter your place..." >
                 </div>
             </div>
+            <div class="leftCont"> </div>
+            </div>
         </div>
+
         <div class="content3" id="content3">
             <section class="tournaments">
-                <h2>TOURNAMENTS</h2>
+                <h2 class="tableNames">TOURNAMENTS</h2>
                 <div class="container container3" >
                     <div class="row container3">
                         <table>
@@ -146,7 +171,7 @@
                 </div>
             </section>
             <section class="players">
-                <h2 id="h2players">PLAYERS</h2>
+                <h2 class="tableNames" id="h2players">PLAYERS</h2>
                 <div class="container container3">
                     <div class="row container3">
                         <table>
