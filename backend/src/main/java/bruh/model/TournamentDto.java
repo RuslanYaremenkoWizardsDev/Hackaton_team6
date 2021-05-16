@@ -47,4 +47,6 @@ public class TournamentDto {
     private TournamentStatus status = TournamentStatus.ACTIVE;
 
     private List<TournamentParticipant> tournamentParticipants;
+
+    private int currentParticipants = 0;
 }

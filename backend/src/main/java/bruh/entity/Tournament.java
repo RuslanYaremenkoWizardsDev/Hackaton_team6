@@ -30,6 +30,7 @@ public class Tournament {
     private int participants = 32;
     private TournamentScenario scenario = TournamentScenario.ONE_MATCH;
     private TournamentStatus tournamentStatus = TournamentStatus.ACTIVE;
+    private int currentParticipants = 0;
 
     public Tournament(String name, String tournamentDescription, String place, long dateStartTournament,
                       long dateLastRegistrationOnTournament) {

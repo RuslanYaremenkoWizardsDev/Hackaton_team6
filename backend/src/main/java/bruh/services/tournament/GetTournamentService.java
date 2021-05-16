@@ -19,19 +19,25 @@ import static bruh.util.constants.LoggerMessages.TOURNAMENT_WAS_NOT_FOUND;
 @Service
 public class GetTournamentService {
     private final ITournamentRepo iTournamentRepo;
+    private final ITournamentParticipantRepo iTournamentParticipantRepo;
     private final TournamentBuilder tournamentBuilder;
 
     public GetTournamentService(ITournamentRepo iTournamentRepo,
-                                TournamentBuilder tournamentBuilder) {
+                                TournamentBuilder tournamentBuilder, ITournamentParticipantRepo iTournamentParticipantRepo) {
         this.iTournamentRepo = iTournamentRepo;
         this.tournamentBuilder = tournamentBuilder;
+        this.iTournamentParticipantRepo = iTournamentParticipantRepo;
     }
 
     public List<TournamentDto> getTournaments(TournamentStatus tournamentStatus) {
         List<Tournament> tournaments = iTournamentRepo.findTournamentsByTournamentStatus(tournamentStatus);
         List<TournamentDto> tournamentDtos = new ArrayList<>();
 
+
         for (Tournament tournament : tournaments) {
+            long tournamentId = tournament.getId();
+            long participantsCounter = iTournamentParticipantRepo.countTournamentParticipantByIdTournament(tournamentId);
+            tournament.setCurrentParticipants((int) participantsCounter);
             tournamentDtos.add(tournamentBuilder.buildTournamentDtoByTournament(tournament));
         }
         return tournamentDtos;

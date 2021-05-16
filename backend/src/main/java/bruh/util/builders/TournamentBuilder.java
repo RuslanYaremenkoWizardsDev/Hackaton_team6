@@ -38,7 +38,8 @@ public class TournamentBuilder {
     public TournamentDto buildTournamentDtoByTournament(Tournament tournament) {
         return new TournamentDto(tournament.getName(), tournament.getDescription(), tournament.getMode(), tournament.getPlace(),
                 tournament.getStartDate(), tournament.getEndDate(), tournament.getTournamentLevel(),
-                tournament.getParticipants(), tournament.getScenario(), tournament.getTournamentStatus(), null);
+                tournament.getParticipants(), tournament.getScenario(), tournament.getTournamentStatus(), null,
+                tournament.getParticipants());
     }
 
     private void validateParticipants(int participantsDto) {

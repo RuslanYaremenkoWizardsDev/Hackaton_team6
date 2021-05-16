@@ -28,6 +28,14 @@ public class User {
     @NotNull(message = FIELD_CANNOT_BE_NULL)
     private String role;
 
+    private int games;
+
+    private int draws;
+
+    private int loses;
+
+    private int power;
+
     public User(String login, String password, String role) {
         this.login = login;
         this.password = password;
