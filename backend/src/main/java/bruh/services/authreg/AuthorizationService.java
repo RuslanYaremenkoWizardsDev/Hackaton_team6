@@ -1,8 +1,8 @@
-package bruh.services;
+package bruh.services.authreg;
 
 import bruh.entity.User;
 import bruh.exceptions.InvalidCredentialsException;
-import bruh.repo.IPostgresRepo;
+import bruh.repo.IUserRepo;
 import bruh.util.encoder.PasswordEncoder;
 import bruh.util.jwtproducer.JWTProducer;
 import lombok.extern.slf4j.Slf4j;
@@ -14,19 +14,19 @@ import static bruh.util.constants.LoggerMessages.*;
 @Service
 public class AuthorizationService {
 
-    private final IPostgresRepo iPostgresRepo;
+    private final IUserRepo iUserRepo;
     private final PasswordEncoder passwordEncoder;
     private final JWTProducer jwtProducer;
 
     @Autowired
-    public AuthorizationService(IPostgresRepo iPostgresRepo, PasswordEncoder passwordEncoder, JWTProducer jwtProducer) {
-        this.iPostgresRepo = iPostgresRepo;
+    public AuthorizationService(IUserRepo iUserRepo, PasswordEncoder passwordEncoder, JWTProducer jwtProducer) {
+        this.iUserRepo = iUserRepo;
         this.passwordEncoder = passwordEncoder;
         this.jwtProducer = jwtProducer;
     }
 
     public String authorizeUser(User user) {
-        User dbUser = iPostgresRepo.findUserByLogin(user.getLogin()).orElseThrow(()
+        User dbUser = iUserRepo.findUserByLogin(user.getLogin()).orElseThrow(()
                 -> new InvalidCredentialsException(String.format(USER_WAS_NOT_FOUND, user.getLogin())));
         if (passwordEncoder.encode(user.getPassword()).equals(dbUser.getPassword())) {
             log.info(String.format(SUCCESSFULLY_AUTHORIZED, user.getLogin()));

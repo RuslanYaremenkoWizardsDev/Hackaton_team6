@@ -1,9 +1,11 @@
 package bruh.exceptions.advicecontrollers;
 
-import bruh.controllers.authreg.AuthorizationController;
-import bruh.controllers.authreg.RegistrationController;
-import bruh.exceptions.IncorrectUserFieldsException;
-import bruh.exceptions.InvalidCredentialsException;
+import bruh.controllers.tournament.CreateTournamentController;
+import bruh.controllers.tournament.GetTournamentController;
+import bruh.exceptions.IncorrectParticipantsFieldsException;
+import bruh.exceptions.IncorrectTournamentFieldsException;
+import bruh.exceptions.InvalidParticipantsNumberException;
+import bruh.exceptions.TournamentNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
@@ -11,18 +13,18 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import static bruh.util.constants.EntityMessages.UNIQUE_LOGIN_CONSTRAINT;
+import static bruh.util.constants.EntityMessages.UNIQUE_NAME_CONSTRAINT;
 import static bruh.util.constants.LoggerMessages.UNEXPECTED_ERROR;
 import static bruh.util.constants.LoggerMessages.USERNAME_IS_BUSY;
 import static bruh.util.constants.ResponseHeaders.APPLICATION_JSON_WITH_CHARSET;
 import static bruh.util.constants.ResponseHeaders.HEADER_CONTENT_TYPE;
 
 @Slf4j
-@ControllerAdvice(basePackageClasses = {AuthorizationController.class, RegistrationController.class})
-public class UserAdviceController {
+@ControllerAdvice(basePackageClasses = {CreateTournamentController.class, GetTournamentController.class})
+public class TournamentAdviceController {
 
-    @ExceptionHandler(value = IncorrectUserFieldsException.class)
-    public ResponseEntity<Object> handleIncorrectUserFieldsException(Exception e) {
+    @ExceptionHandler(value = InvalidParticipantsNumberException.class)
+    public ResponseEntity<Object> handleInvalidParticipantsNumberException(Exception e) {
         log.error(e.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
@@ -31,7 +33,27 @@ public class UserAdviceController {
                 .body(e.getMessage());
     }
 
-    @ExceptionHandler(value = InvalidCredentialsException.class)
+    @ExceptionHandler(value = IncorrectParticipantsFieldsException.class)
+    public ResponseEntity<Object> handleIncorrectParticipantsFieldsException(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header(HEADER_CONTENT_TYPE, APPLICATION_JSON_WITH_CHARSET)
+                .body(e.getMessage());
+    }
+
+    @ExceptionHandler(value = TournamentNotFoundException.class)
+    public ResponseEntity<Object> handleTournamentNotFoundException(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header(HEADER_CONTENT_TYPE, APPLICATION_JSON_WITH_CHARSET)
+                .body(e.getMessage());
+    }
+
+    @ExceptionHandler(value = IncorrectTournamentFieldsException.class)
     public ResponseEntity<Object> handleInvalidCredentialsException(Exception e) {
         log.error(e.getMessage());
         return ResponseEntity
@@ -47,7 +69,7 @@ public class UserAdviceController {
         String message = String.format(USERNAME_IS_BUSY, cause.substring(cause.lastIndexOf("=") + 2,
                 cause.lastIndexOf(")")));
         log.error(e.getMessage());
-        if (e.getMessage().contains(UNIQUE_LOGIN_CONSTRAINT)) {
+        if (e.getMessage().contains(UNIQUE_NAME_CONSTRAINT)) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .contentType(MediaType.APPLICATION_JSON)

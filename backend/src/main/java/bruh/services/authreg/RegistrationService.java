@@ -1,7 +1,7 @@
-package bruh.services;
+package bruh.services.authreg;
 
 import bruh.entity.User;
-import bruh.repo.IPostgresRepo;
+import bruh.repo.IUserRepo;
 import bruh.util.encoder.PasswordEncoder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +12,18 @@ import static bruh.util.constants.LoggerMessages.SUCCESSFULLY_REGISTERED;
 @Service
 public class RegistrationService {
 
-    private final IPostgresRepo iPostgresRepo;
+    private final IUserRepo iUserRepo;
     private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public RegistrationService(IPostgresRepo iPostgresRepo, PasswordEncoder passwordEncoder) {
-        this.iPostgresRepo = iPostgresRepo;
+    public RegistrationService(IUserRepo iUserRepo, PasswordEncoder passwordEncoder) {
+        this.iUserRepo = iUserRepo;
         this.passwordEncoder = passwordEncoder;
     }
 
     public void registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        iPostgresRepo.save(user);
+        iUserRepo.save(user);
         log.info(String.format(SUCCESSFULLY_REGISTERED, user.getLogin()));
     }
 }

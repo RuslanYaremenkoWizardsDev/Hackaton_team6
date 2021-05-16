@@ -2,7 +2,8 @@ package bruh.services;
 
 import bruh.entity.User;
 import bruh.exceptions.InvalidCredentialsException;
-import bruh.repo.IPostgresRepo;
+import bruh.repo.IUserRepo;
+import bruh.services.authreg.AuthorizationService;
 import bruh.util.encoder.PasswordEncoder;
 import bruh.util.jwtproducer.JWTProducer;
 import org.junit.jupiter.api.Assertions;
@@ -18,7 +19,7 @@ import static bruh.util.constants.LoggerMessages.USER_WAS_NOT_FOUND;
 
 class AuthorizationServiceTest {
 
-    private final IPostgresRepo postgressRepo = Mockito.mock(IPostgresRepo.class);
+    private final IUserRepo postgressRepo = Mockito.mock(IUserRepo.class);
     private final PasswordEncoder passwordEncoder = Mockito.mock(PasswordEncoder.class);
     private final JWTProducer jwtProducer = Mockito.mock(JWTProducer.class);
     private final AuthorizationService cut = new AuthorizationService(postgressRepo, passwordEncoder, jwtProducer);

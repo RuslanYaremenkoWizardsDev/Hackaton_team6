@@ -1,9 +1,10 @@
 package bruh.controllers;
 
+import bruh.controllers.authreg.RegistrationController;
 import bruh.entity.User;
 import bruh.exceptions.advicecontrollers.UserAdviceController;
 import bruh.model.UserDto;
-import bruh.services.RegistrationService;
+import bruh.services.authreg.RegistrationService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

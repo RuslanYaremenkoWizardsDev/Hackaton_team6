@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Repository
 @Transactional
-public interface IPostgresRepo extends JpaRepository<User, Integer> {
+public interface IUserRepo extends JpaRepository<User, Integer> {
 
     Optional<User> findUserByLogin(String login);
 

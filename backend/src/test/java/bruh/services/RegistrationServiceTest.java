@@ -1,7 +1,8 @@
 package bruh.services;
 
 import bruh.entity.User;
-import bruh.repo.IPostgresRepo;
+import bruh.repo.IUserRepo;
+import bruh.services.authreg.RegistrationService;
 import bruh.util.encoder.PasswordEncoder;
 import org.hibernate.exception.ConstraintViolationException;
 import org.junit.jupiter.api.Assertions;
@@ -15,7 +16,7 @@ import java.util.stream.Stream;
 import static bruh.util.constants.LoggerMessages.USERNAME_IS_BUSY;
 
 class RegistrationServiceTest {
-    private final IPostgresRepo postgresRepo = Mockito.mock(IPostgresRepo.class);
+    private final IUserRepo postgresRepo = Mockito.mock(IUserRepo.class);
     private final PasswordEncoder passwordEncoder = Mockito.mock(PasswordEncoder.class);
     private final RegistrationService cut = new RegistrationService(postgresRepo, passwordEncoder);
 

@@ -1,9 +1,10 @@
-package bruh.controllers;
+package bruh.controllers.authreg;
 
 import bruh.entity.User;
 import bruh.exceptions.IncorrectUserFieldsException;
 import bruh.model.UserDto;
-import bruh.services.RegistrationService;
+import bruh.services.authreg.AuthorizationService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,25 +12,27 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
-import static bruh.util.constants.PostMapping.REGISTRATION_MAPPING;
+import static bruh.util.constants.PostMapping.AUTHORIZATION_MAPPING;
 
+@Slf4j
 @RestController
 @CrossOrigin(value = "http://localhost:4080")
-public class RegistrationController {
-    private final RegistrationService registrationService;
+public class AuthorizationController {
+    private final AuthorizationService authorizationService;
 
     @Autowired
-    public RegistrationController(RegistrationService registrationService) {
-        this.registrationService = registrationService;
+    public AuthorizationController(AuthorizationService authorizationService) {
+        this.authorizationService = authorizationService;
     }
 
-    @PostMapping(value = REGISTRATION_MAPPING)
-    public void registryUser(@Valid @RequestBody UserDto userDto, BindingResult bindingResult) {
+    @PostMapping(value = AUTHORIZATION_MAPPING)
+    public String authorizeUser(@Valid @RequestBody UserDto userDto, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             String errorMessage = bindingResult.getAllErrors().get(0).getDefaultMessage();
+            log.error(errorMessage);
             throw new IncorrectUserFieldsException(errorMessage);
         }
 
-        registrationService.registerUser(new User(userDto.getLogin(), userDto.getPassword(), userDto.getRole()));
+        return authorizationService.authorizeUser(new User(userDto.getLogin(), userDto.getPassword(), userDto.getRole()));
     }
 }

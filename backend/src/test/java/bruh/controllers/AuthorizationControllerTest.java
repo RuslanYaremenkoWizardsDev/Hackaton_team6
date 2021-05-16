@@ -1,10 +1,11 @@
 package bruh.controllers;
 
+import bruh.controllers.authreg.AuthorizationController;
 import bruh.entity.User;
 import bruh.exceptions.InvalidCredentialsException;
 import bruh.exceptions.advicecontrollers.UserAdviceController;
 import bruh.model.UserDto;
-import bruh.services.AuthorizationService;
+import bruh.services.authreg.AuthorizationService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
