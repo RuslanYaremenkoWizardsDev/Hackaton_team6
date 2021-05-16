@@ -8,33 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body class="dark" id="BigBody">
-    <header>
-        <div class="container">
-            <div class="container__name block">
-                <div class="block__left">
-                    <img src="img/logoWhite.png">
-                    <h2 class="block__left--name">Brah</h2>
-                </div>
-                <a href="createAccount.html">NEXT </a>
-                <a href="mainPage.html"> PREV</a>
-                <div class="block__right container-dropdwn">
-                    <div class="container-dropdwn__dropdown">
-                        <button class="dropbtn btn" id="localization-switch">
-                            En
-                        </button>
-                        <div id="dropdown-content" >
-                            <button class="dropdown-content btn-modal">Russian</button>
-                            <hr>
-                            <button class="dropdown-content btn-modal">English</button>
-                        </div>
-                    </div>
-                    <button class="topic btn" id="modeSwitchToLight"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
-                    <button class="topic btn" id="modeSwitchToDark"><img class="topic" src="img/header-dark-mode-logo.png" alt=""></button>
-                </div>
-            </div>
+<header class="header">
+    <div class="left-part">
+        <div class="left-part__logo">
+            <img id="logoPzdc" src="img/logo.png">
         </div>
-    </header>
-    <main id="main">
+        <div class="left-part__name">
+            Bruh
+        </div>
+        <a href="mainPage.html">NEXT </a>
+        <a href="createAccount.html"> PREV</a>
+    </div>
+    <div class="right-part">
+        <div class=" left-icon mode-switch">
+            <button id="mode-switch">
+                <img id="sunJopa" src="img/sun.png">
+            </button>
+        </div>
+    </div>
+</header>
+<main id="main">
         <div class="signIn-form">
             <div class="form__sign">
                 SIGN IN
@@ -66,13 +59,9 @@
             </div>
         </div>
     </main>
-<!--    <footer>-->
-<!--        <div class="block-footer">-->
-<!--            <p class="block-footer__text">Bruh </p>-->
-<!--            <div class="block-footer&#45;&#45;line-vertival"></div>-->
-<!--            <p class="block-footer__text">2021</p>-->
-<!--        </div>-->
-<!--    </footer>-->
+    <footer>
+        Bruh | 2021
+    </footer>
     <script>
         const localizationSwitch = document.getElementById('localization-switch');
         const dropdownLang = document.getElementById('dropdown-content');

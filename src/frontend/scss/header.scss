@@ -1,99 +1,85 @@
-@import 'variables';
-@import 'modalWindow';
-.container{
-    display: flex;
-    max-width: 100%;
-    height: 90px;
+body{
+    background-color: #393B3C;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header{
+    padding: 0;
+    margin: 0;
+    height: 100px;
     border-bottom: 1px solid #323232;
     box-shadow: 0 0 4px 0 #1a1a1a;
-    &__name{
-        width: 90%;
-        height: 60px;
-        margin: auto;
-        align-items: center;
-        display: flex;  
-    }
 }
-.block{
-    &__left{
-        width: 15%;
-        height: 60px;
-        display: flex;
-        &--logo{
-            width: 60px;
-            height: 60px;
-            float: left;
-        }
-        &--name{
-            margin: auto 0;
-            padding-left: 7%;
-        }
-    }
-    &__right {
-        display: flex;
-        margin-left: 75%;
-        .container-dropdwn{
-            &__dropdown {
-            overflow: hidden;
-            }
-        }
-    }
+
+.header, .left-part, .right-part{
+    display: flex;
+    flex-wrap: wrap;
 }
-.dropbtn {
-    font-size: 26px;
-    font-weight: bolder;    
+
+.left-part__logo{
+    width: 140px;
+    height: 110px;
 }
-#dropdown-content{
+
+.left-part__name{
+    width: 140px;
+    height: 110px;
+    color: white;
+    font-size: 40px;
+    padding-top: 10%;
+}
+
+.right-part{
+    margin-left: 60%;
+}
+
+.left-icon{
+    width: 40px;
+    height: 110px;
+    margin: 5px;
+    padding-top: 20%;
+}
+
+.changePassLogModal{
     display: none;
-    position: absolute;
-    background-color: #1C1F21;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 7px;
-    z-index: 1; 
-    margin-left: -5%;
+    width: 130px;
+    color: #393B3C;
+    padding: 5px;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.btn-modal{
-    width: 100%;
-    border-radius: 7px;
-    padding: 5px 16px;
-    text-align: center;
-}
-.btn-modal:hover{
-    color: $color-btn-hover;
-}
-.btn-modal:active{
-    color: $color-btn-active;
+.ChangeLogin, .ChangePassword{
+    margin: 7px;
+    color: #393B3C;
+  font-size: 13px;
 }
 
-.topic{
-    width: 35px;
-    height: 35px;
-    margin: auto 7px;
-    }
-
-.setting{
-    width: 24px;
-    height: 24px;
-    margin: 14% 7px;
-}
-.signout{
-    width: 24px;
-    height: 24px;
-    margin: auto 7px;
+#localization-switch{
+    color: white;
+    font-size: 28px;
 }
 
-.show{
-    display: block;
+.ChangeLogin:hover, .ChangePassword:hover{
+    text-decoration: underline;
 }
 
+#logoPzdc{
+  width: 140px;
+  height: 110px;
+}
 
-/*.show-animation-login{
-    display: block;
-    animation: showing 2s linear;
-}*/
-
-
-
-
-
+#sunJopa{
+  margin-top: 20px;
+}

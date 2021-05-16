@@ -15,44 +15,68 @@
    
 </head>
 <body>
-<header>
-    <div class="container">
-        <div class="container__name block">
-            <div class="block__left">
-                <img src="img/logoWhite.png">
-                <h2 class="block__left--name">Brah</h2>
-            </div>
-            <a href="createAccount.html">NEXT </a>
-            <a href="index.html"> PREV</a>
-            <div class="block__right container-dropdwn">
-                <div class="container-dropdwn__dropdown">
-                    <button class="dropbtn btn" id="localization-switch">
-                        En
-                    </button>
-                    <div id="dropdown-content" >
-                        <button class="dropdown-content btn-modal">Russian</button>
-                        <hr>
-                        <button class="dropdown-content btn-modal">English</button>
-                    </div>
+<header class="header">
+    <div class="left-part">
+        <div class="left-part__logo">
+            <img id="logoPzdc" src="img/logo.png">
+        </div>
+        <div class="left-part__name">
+            Bruh
+        </div>
+        <a href="createAccount.html">NEXT </a>
+        <a href="index.html"> PREV</a>
+    </div>
+    <div class="right-part">
+        <div class=" left-icon mode-switch">
+            <button id="mode-switch">
+                <img id="sun" src="img/sun.png">
+            </button>
+        </div>
+        <div class="left-icon changePassLog">
+            <button id="changePassLog">
+                <img src="img/wheel.png">
+            </button>
+            <div class="changePassLogModal" id="changePassLogModal">
+                <div class="ChangeLogin">
+                    Change Login
                 </div>
-                <button class="topic btn"><img class="topic" src="img/header-light-mode-logo.png" alt=""></button>
+                <div class="ChangePassword">
+                    Change Password
+                </div>
             </div>
+        </div>
+        <div class=" left-icon logOut">
+            <button id="logOut">
+                <img src="img/door.png">
+            </button>
         </div>
     </div>
 </header>
 <main>
+    <div class="modalClearAll" id="modalClearAll">
+        <div class="krest">
+            <button id="krest"> ✕</button>
+        </div>
+        <div class="modalClearAll__sign">
+            CLEAR ALL?
+        </div>
+        <div class="buttons">
+            <button id="yesbutton">YES</button>
+            <button id="nobutton">NO</button>
+        </div>
+    </div>
     <div class="main-block" id="main-block">
         <div class="search">
             <div class="search__input fg--search">
-                <input class="search__input--input" required placeholder="Search by start date (from, to)">
+                <input class="search__input--input" required placeholder="Search by end date">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div class="search__input fg--search">
-                <input class="search__input--input" required placeholder="Search by reg date (from, to)">
+                <input class="search__input--input" required placeholder="Search by mode">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div class="search__input fg--search">
-                <input class="search__input--input"  required placeholder="Search by state">
+                <input class="search__input--input"  required placeholder="Search by username">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
         </div>
@@ -139,6 +163,72 @@
                 <div class="rightCont__input">
                     <input id="CreateTourPlace" placeholder="Enter your place..." >
                 </div>
+                <div class="dateRaw">
+                    <div   class="hui rightCont__label">
+                        Start date:
+                    </div>
+                    <div class="rightCont__input">
+                        <input id="CreateTourStartDate" >
+                    </div>
+                    <div   class="hui rightCont__label">
+                        End date:
+                    </div>
+                    <div class="rightCont__input">
+                        <input id="CreateTourEndDate"  >
+                    </div>
+                </div>
+                <div class="dateRaw">
+                    <div   class="hui rightCont__label">
+                        Level of tournament:
+                    </div>
+                    <div class="rightCont__input">
+                        <select id="CreateTourLevel">
+                            <option value="Advanced">Advanced</option>
+                            <option value="Middle" selected="selected">Middle</option>
+                            <option value="Beginner">Beginner</option>
+                        </select>
+                    </div>
+                    <div   class="hui rightCont__label">
+                        Number of players:
+                    </div>
+                    <div class="rightCont__input">
+                        <select id="CreateTourNumPlay">
+                            <option value="128">128</option>
+                            <option value="64">64</option>
+                            <option value="32" selected="selected">32</option>
+                            <option value="16">16</option>
+                            <option value="8">8</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+               <div class="dateRaw">
+                   <div   class="hui rightCont__label">
+                       Scenario for tournament:
+                   </div>
+                   <div class="rightCont__input">
+                       <select id="CreateTourScenario">
+                           <option value="onematch">One match confrantation</option>
+                           <option value="twomatch">Two match confrantation</option>
+                           <option value="threewins">Three wins</option>
+                       </select>
+                   </div>
+               </div>
+                <div class="dateRaw">
+                    <div   class="hui rightCont__label">
+                        Invite players:
+                    </div>
+                    <div class="rightCont__input">
+                        <select id="CreateTourPlayersChoose">
+                            <option value="Player1">Player 1</option>
+                            <option value="Player2" >Player2</option>
+                            <option value="Player3">Player 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="createButton">
+                    <button id="createButton">Create</button>
+                </div>
             </div>
             <div class="leftCont"> </div>
             </div>
@@ -202,17 +292,34 @@
         </div>
     </div>
 </main>
+<footer>
+    Bruh | 2021
+</footer>
         <script>
-    const localizationSwitch = document.getElementById('localization-switch');
-    const dropdownLang = document.getElementById('dropdown-content');
 
-    localizationSwitch.addEventListener('click', function (e) {
-        dropdownLang.style.display = "block";
-    });
+            const clearAll = document.getElementById("clearAll");
+            const modalClearAll = document.getElementById("modalClearAll");
+            const krest = document.getElementById("krest");
 
-    dropdownLang.addEventListener('click', function (e) {
-        dropdownLang.style.display = "none";
-    });
+            clearAll.addEventListener("click", function (e) {
+                modalClearAll.style.display = "block" ;
+            });
+
+            krest.addEventListener("click", function (e) {
+                modalClearAll.style.display = "none" ;
+            });
+
+
+            const chageLogPassButt = document.getElementById("changePassLog");
+            const chageLogPassModal = document.getElementById("changePassLogModal");
+
+            chageLogPassButt.addEventListener("click", function (e) {
+                chageLogPassModal.style.display = "block";
+            });
+
+            chageLogPassModal.addEventListener("click", function (e) {
+                chageLogPassModal.style.display = "none";
+            });
 
     const tournament = document.getElementById("tournament");
     const crateTour = document.getElementById("createTour");
@@ -220,7 +327,6 @@
     const content1 = document.getElementById("content1");
     const content2 = document.getElementById("content2");
     const content3 = document.getElementById("content3");
-    const maincontent = document.getElementById("main-block");
 
     tournament.addEventListener("click",function (e) {
         content1.style.display = "block";
@@ -233,6 +339,7 @@
     });
 
     crateTour.addEventListener("click",function (e) {
+        console.log("hui");
         content1.style.display = "none";
         content2.style.display = "block";
         content3.style.display = "none";
