@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign In</title>
-    <link rel="stylesheet" href="scss/signIn.scss">
-    <link rel="stylesheet" href="scss/header.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -40,20 +38,20 @@
                 SIGN IN
             </div>
             <div class="signIn-form__login">
-                <div class="form__input-name">
+                <label for="LoginInput_SignIn" class="form__input-name">
                     LOGIN
-                </div>
+                </label>
                 <div class="signIn-form__input">
                     <input id="LoginInput_SignIn" placeholder="Enter your login...">
                 </div>
             </div>
             <div class="signIn-form__password">
-                <div class="form__input-name">
+                <label for="PasswordInput_SignIn" class="form__input-name">
                     PASSWORD
-                </div>
+                </label>
                 <div class="signIn-form__input">
                     <input  id="PasswordInput_SignIn" placeholder="Enter your password..." type="password">
-                    <i class="far fa-eye" id="togglePassword"></i>
+                   <i class="far fa-eye" id="togglePassword"></i>
                 </div>
 
             </div>
@@ -66,13 +64,13 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="block-footer">
-            <p class="block-footer__text">Bruh </p>
-            <div class="block-footer--line-vertival"></div>
-            <p class="block-footer__text">2021</p>
-        </div>
-    </footer>
+<!--    <footer>-->
+<!--        <div class="block-footer">-->
+<!--            <p class="block-footer__text">Bruh </p>-->
+<!--            <div class="block-footer&#45;&#45;line-vertival"></div>-->
+<!--            <p class="block-footer__text">2021</p>-->
+<!--        </div>-->
+<!--    </footer>-->
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#PasswordInput_SignIn');

@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Account</title>
-    <!-- <link rel="stylesheet" href="../css/createAccount.css"> -->
-    <!-- <link rel="stylesheet" href="../css/header.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
 <header>
     <div class="container">
         <div class="container__name block">
             <div class="block__left">
-                <div class="block__left--logo"></div>
+                <img src="img/logoWhite.png">
                 <h2 class="block__left--name">Brah</h2>
             </div>
             <a href="signIn.html">NEXT</a>
@@ -37,6 +36,11 @@
         <div class="signUp-form">
             <div class="form__sign">
                 REGISTRATION
+            </div>
+            <div class="form__role">
+                Register as:
+                <span class="role__user active">User</span>
+                <span class="role__admin">Admin</span>
             </div>
             <div class="form__input-name">
                 LOGIN
@@ -66,13 +70,13 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="block-footer">
-            <p class="block-footer__text">ByDefault project</p>
-            <div class="block-footer--line-vertival"></div>
-            <p class="block-footer__text">2021</p>
-        </div>
-    </footer>
+<!--    <footer>-->
+<!--        <div class="block-footer">-->
+<!--            <p class="block-footer__text">ByDefault project</p>-->
+<!--            <div class="block-footer&#45;&#45;line-vertival"></div>-->
+<!--            <p class="block-footer__text">2021</p>-->
+<!--        </div>-->
+<!--    </footer>-->
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#PasswordInput_SignUp');

@@ -1,6 +1,6 @@
 .signUp-form{
   width: 28%;
-  height: 465px;
+  height: 490px;
   margin: 7% auto;
   padding: auto;
   text-align: center;
@@ -34,4 +34,28 @@
   color: black;
   font-size: 15px;
   margin-left: 10px;
+}
+
+.form__role{
+  margin-top: 15px;
+  color: white;
+  font-size: 15px;
+}
+
+ .role__user {
+   margin-left: 10px;
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+}
+
+.role__admin{
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+}
+
+.active{
+  background-color: #E5AC55;
+  border-radius: 6px;
 }

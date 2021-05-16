@@ -21,6 +21,7 @@ input{
   padding-left: 14px;
 }
 
+
 input::placeholder{
   font-style: italic;
   font-size: 18px;
@@ -92,18 +93,19 @@ button{
 
 .form__input-name{
   width: 80%;
-  margin:20px auto 10px auto;
+  margin:20px auto 10px 40px;
   font-size: 14px;
   text-align: left;
   color: #757575;
   font-family: 'Play', sans-serif;
+  float: left;
 }
 
 .form__lastWords{
   color: #757575;
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 #SignInButton:hover {
