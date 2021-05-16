@@ -8,3 +8,30 @@
   box-shadow:0 0 10px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
 }
+
+#SignUpButton{
+  background: #E5AC55;
+  width: 40%;
+  margin-top: 30px;
+  height: 45px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 24px;
+}
+
+#GuestButton{
+  background: #85BDE0;
+  width: 30%;
+  margin-top: 30px;
+  height: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 15px;
+  margin-left: 10px;
+}
