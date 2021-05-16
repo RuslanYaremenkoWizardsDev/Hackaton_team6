@@ -21,7 +21,7 @@
                         <button class="dropbtn btn" id="localization-switch">
                             En
                         </button>
-                        <div class="dropdown-content" id="dropdown-languages">
+                        <div id="dropdown-content" >
                             <button class="dropdown-content btn-modal">Russian</button>
                             <hr>
                             <button class="dropdown-content btn-modal">English</button>
@@ -72,15 +72,15 @@
 <!--        </div>-->
 <!--    </footer>-->
     <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#PasswordInput_SignIn');
+        const localizationSwitch = document.getElementById('localization-switch');
+        const dropdownLang = document.getElementById('dropdown-content');
 
-        togglePassword.addEventListener('click', function (e) {
-            // toggle the type attribute
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-            // toggle the eye slash icon
-            this.classList.toggle('fa-eye-slash');
+        localizationSwitch.addEventListener('click', function (e) {
+            dropdownLang.style.display = "block";
+        });
+
+        dropdownLang.addEventListener('click', function (e) {
+            dropdownLang.style.display = "none";
         });
     </script>
 </body>
