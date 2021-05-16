@@ -53,6 +53,18 @@
     </div>
 </header>
 <main>
+    <div class="modalClearAll" id="modalClearAll">
+        <div class="krest">
+            <button id="krest"> ✕</button>
+        </div>
+        <div class="modalClearAll__sign">
+            CLEAR ALL?
+        </div>
+        <div class="buttons">
+            <button id="yesbutton">YES</button>
+            <button id="nobutton">NO</button>
+        </div>
+    </div>
     <div class="main-block" id="main-block">
         <div class="search">
             <div class="search__input fg--search">
@@ -284,6 +296,20 @@
     Bruh | 2021
 </footer>
         <script>
+
+            const clearAll = document.getElementById("clearAll");
+            const modalClearAll = document.getElementById("modalClearAll");
+            const krest = document.getElementById("krest");
+
+            clearAll.addEventListener("click", function (e) {
+                modalClearAll.style.display = "block" ;
+            });
+
+            krest.addEventListener("click", function (e) {
+                modalClearAll.style.display = "none" ;
+            });
+
+
             const chageLogPassButt = document.getElementById("changePassLog");
             const chageLogPassModal = document.getElementById("changePassLogModal");
 

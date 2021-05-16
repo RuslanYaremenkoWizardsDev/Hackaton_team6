@@ -309,3 +309,51 @@ td:last-child {
     background-color: #D73131;
     border-radius: 4px;
 }
+
+
+.modalClearAll{
+    display: none;
+    width: 350px;
+    height: 200px;
+    background-color: #23272A;
+    margin: 10% auto;
+    border-radius: 8px;
+}
+.modalClearAll__sign{
+    color: white;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.buttons{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.krest{
+    width: 20px;
+    height: 20px;
+    color: white;
+    float: right;
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+.krest:hover{
+    font-weight: bold;
+}
+
+#yesbutton, #nobutton{
+    margin: 7px;
+    color: #E5AC55;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #E5AC55;
+    border-radius: 5px;
+}
+
+#yesbutton:hover, #nobutton:hover{
+    background-color: #E5AC55 ;
+    color: #393B3C;
+}
