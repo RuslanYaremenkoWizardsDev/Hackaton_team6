@@ -20,6 +20,5 @@ public class GetTournamentController {
     @PostMapping(value = GET_TOURNAMENT_MAPPING)
     public List<TournamentDto> getTournaments(@RequestBody TournamentStatus tournamentStatus) {
         return getTournamentService.getTournaments(tournamentStatus);
-
     }
 }

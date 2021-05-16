@@ -43,7 +43,7 @@ public class TournamentDto {
 
     private TournamentScenario scenario = TournamentScenario.ONE_MATCH;
 
-    private TournamentStatus status = TournamentStatus.ACTIVE;
+    private TournamentStatus status = TournamentStatus.IN_PROGRESS;
 
     private List<TournamentParticipant> tournamentParticipants;
 }

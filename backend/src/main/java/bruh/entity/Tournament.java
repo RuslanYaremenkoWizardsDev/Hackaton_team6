@@ -29,7 +29,7 @@ public class Tournament {
     private TournamentLevel tournamentLevel = TournamentLevel.MIDDLE;
     private int participants = 32;
     private TournamentScenario scenario = TournamentScenario.ONE_MATCH;
-    private TournamentStatus tournamentStatus = TournamentStatus.ACTIVE;
+    private TournamentStatus tournamentStatus = TournamentStatus.IN_PROGRESS;
 
     public Tournament(String name, String tournamentDescription, String place, long dateStartTournament,
                       long dateLastRegistrationOnTournament) {
