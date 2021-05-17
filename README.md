@@ -162,9 +162,8 @@
 
 - Invalid requests/response example:
 
-1) 
-
-        request     
+1) Tournament name is busy
+        request :    
         {"name":"four","description":"123werwerwerwer456", "mode":0, "place":"first" , "startDate":1102020202 , "endDate": 45454554, "tournamentLevel":0, "participants":4 }
 
         response    
@@ -190,47 +189,19 @@
         response:  
         Status: 200 OK;     
         body: "tournament four was successfully created";
+
 ;
 
 - Invalid requests/response example:
 
-1)
+1)No permission
 
-     request     
-     {"name":"four", "mode":"user"}
-
-     response    
-     Status: 400 Bad request;    
-     body : "Tournament four was not found";
-
-
-### Requests for delete tournament ###
-
-- URL: http://localhost:8081/getTournament;
-- requestType: POST;
-- bodyType: raw/json;
-- requestBody:
-
-        int status;
-
-
-- Valid request/response example:
-
-        request:  
-        {"tournamentStatus":0}
-        response:  
-        Status: 200 OK;     
-;
-
-- Invalid requests/response example:
-
-1)
-
-     request     
-     {"tournamentStatus":0}
-
-     response    
-     Status: 400 Bad request;    
+        request :    
+        {"name":"four", "mode":"user"}
+        response    
+        Status: 400 Bad request;    
+        body : "Tournament four was not found";
+	
 
 
 
@@ -255,28 +226,27 @@
 
 1) TOURNAMENT_WAS_NOT_FOUND
 
-     request     
-   {"login":"smile","nameTournament":"trolan"}
-
-     response    
-     Status: 400 Bad request;
+        request:  
+        {"login":"smile","nameTournament":"trolan"}
+        response:  
+        Status: 400 Bad request;
+        body:"Tournament trolan was not found";
     
 2) USER_WAS_NOT_FOUND
 
-     request     
-   {"login":"smile","nameTournament":"trolan"}
-
-     response    
-     Status: 400 Bad request;
+        request:  
+        {"login":"smile","nameTournament":"trolan"}
+        response:  
+        Status: 400 Bad request;
+        body:"User smile was not found";
    
 3) USER_ALREADY_IN_TOURNAMENT
 
-     request     
-   {"login":"smile","nameTournament":"trolan"}
-
-     response    
-     Status: 400 Bad request;   
-
+        request:  
+        {"login":"smile","nameTournament":"trolan"}
+        response:  
+        Status: 400 Bad request;
+        body:"User smile is already taking part in trolan!";
 
 
 
@@ -300,13 +270,13 @@
 - Invalid requests/response example:
 
 
-1) TOURNAMENT_WAS_NOT_FOUND
+1) Tournament is already finished"
 
-     request     
-   {"login":"smile","nameTournament":"trolan"}
-
-     response    
-     Status: 400 Bad request;
+        request:  
+        {"tournamentName":"four"}
+        response:  
+        Status: 400 OK;
+        body: Tournament four is already finished
    
    
 ### Requests for get final grid ###
@@ -328,13 +298,157 @@
 - Invalid requests/response example:
 
 
-1) TOURNAMENT_WAS_NOT_FOUND
+1) Tournament was not found
 
-     request
-     {"tournamentName":"four"}
-     response    
-     Status: 400 Bad request;
+        request:  
+        {"tournamentName":"four"}
+        response:  
+        Status: 400 OK;
+        body: "Tournament %s was not found"
+        
+### Requests for search by date ###
+
+- URL: http://localhost:8081/searchByDate;
+- requestType: POST;
+- bodyType: raw/json;
+- requestBody:
+
+        long date;
+
+- Valid request/response example:
+
+        request:  
+        {"date":12.21.12}
+        response:  
+        Status: 200 OK;
+        
+
+- Invalid requests/response example:
+
+
+1) Tournament was not found
+
+        request:  
+        {"tournamentName":"four"}
+        response:  
+        Status: 400 OK;
+
+### Requests for search by type ###
+
+- URL: http://localhost:8081/searchByType;
+- requestType: POST;
+- bodyType: raw/json;
+- requestBody:
+
+        int tournamentMode;
+
+- Valid request/response example:
+
+        request:  
+        {"tournamentMode": 1}
+        response:  
+        Status: 200 OK;
+        
+
+- Invalid requests/response example:
+
+
+1) Tournament was not found
+
+        request:  
+        {"tournamentName":"four"}
+        response:  
+        Status: 400 OK;
+
+### Requests for search by username ###
+
+- URL: http://localhost:8081/searchByUsername;
+- requestType: POST;
+- bodyType: raw/json;
+- requestBody:
+
+        String username;
+
+- Valid request/response example:
+
+        request:  
+        {"username": "four"}
+        response:  
+        Status: 200 OK;
+        
+
+- Invalid requests/response example:
+
+
+1) Tournament was not found
+
+        request:  
+        {"username":"four"}
+        response:  
+        Status: 400 OK;
+
+### Requests for tournament statistic ###
+
+- URL: http://localhost:8081/tournamentStatistic;
+- requestType: POST;
+- bodyType: raw/json;
+- requestBody:
+
+        String username;
+        int mode;
+        int finished;
+        int inProgress;
+        int initialized;
+
+- Valid request/response example:
+
+        request:  
+        {"username": "four","mode":1,"finished":1,"inProgress":1,"initialized":1}
+        response:  
+        Status: 200 OK;
+        
+
+- Invalid requests/response example:
+
+
+1) Tournament was not found
+
+        request:  
+        {"username":"four"}
+        response:  
+        Status: 400 OK;
+
+### Requests for user statistic ###
+
+- URL: http://localhost:8081/tournamentStatistic;
+- requestType: POST;
+- bodyType: raw/json;
+- requestBody:
+
+        String login;
+        int games;
+        int draws;
+        int loses;
+        int wins;
+        int power
+
+- Valid request/response example:
+
+        request:  
+        {"login": "four","games":1,"draws":1,"loses":1,"wins":1,"power":244}
+        response:  
+        Status: 200 OK;
+        
+
+- Invalid requests/response example:
+
+
+1) Tournament was not found
+
+        request:  
+        {"username":"four"}
+        response:  
+        Status: 400 OK;
+
+
     
-
-
-
