@@ -12,11 +12,11 @@ import javax.validation.Valid;
 import static bruh.util.constants.PostMapping.ADD_PARTICIPANT_MAPPING;
 
 @RestController
-public class AddParticipantsToTournament {
+public class AddParticipantsToTournamentController {
     private final AddParticipantsService addParticipantsService;
 
     @Autowired
-    public AddParticipantsToTournament(AddParticipantsService addParticipantsService) {
+    public AddParticipantsToTournamentController(AddParticipantsService addParticipantsService) {
         this.addParticipantsService = addParticipantsService;
     }
 

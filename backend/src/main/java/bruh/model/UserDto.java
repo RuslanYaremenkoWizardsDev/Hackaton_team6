@@ -19,9 +19,17 @@ public class UserDto {
     @Pattern(regexp = LOGIN_REG_EXP, message = LOGIN_VALIDATE_MESSAGE)
     private String login;
 
+    public UserDto(String login, String password, String role) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
+
     @NotBlank(message = FIELD_CANNOT_BE_NULL)
     @Pattern(regexp = PASSWORD_REG_EXP, message = PASSWORD_VALIDATE_MESSAGE)
     private String password;
+
+    private String role;
 
     private int games;
 
@@ -29,7 +37,7 @@ public class UserDto {
 
     private int loses;
 
-    private String role;
+    private int wins;
 
     private int power;
 }

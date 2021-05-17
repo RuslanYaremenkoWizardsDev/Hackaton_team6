@@ -7,9 +7,12 @@ import java.util.List;
 
 @Repository
 public interface ITournamentParticipantRepo extends JpaRepository<TournamentParticipant, Long> {
+
+    List<Long> findIdByIdUser(TournamentParticipant tournamentParticipant);
+
     List<TournamentParticipant> findByIdTournament(long idTournament);
 
-    List<Long> findByIdUser(TournamentParticipant tournamentParticipant);
+    List<TournamentParticipant> findByIdUser(long idUser);
 
     Integer countTournamentParticipantByIdTournament(long idTournament);
 }

@@ -1,9 +1,7 @@
 package bruh.exceptions.advicecontrollers;
 
-import bruh.controllers.tournament.CreateTournamentController;
-import bruh.controllers.tournament.GetTournamentController;
+import bruh.controllers.tournament.*;
 import bruh.exceptions.*;
-import bruh.util.constants.LoggerMessages;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
@@ -17,7 +15,8 @@ import static bruh.util.constants.ResponseHeaders.APPLICATION_JSON_WITH_CHARSET;
 import static bruh.util.constants.ResponseHeaders.HEADER_CONTENT_TYPE;
 
 @Slf4j
-@ControllerAdvice(basePackageClasses = {CreateTournamentController.class, GetTournamentController.class})
+@ControllerAdvice(basePackageClasses = {TournamentController.class, GetTournamentController.class,
+        GetCupGridController.class, AddParticipantsToTournamentController.class, SearchTournamentController.class, StatisticsController.class})
 public class TournamentAdviceController {
 
     @ExceptionHandler(value = InvalidParticipantsNumberException.class)
@@ -32,6 +31,36 @@ public class TournamentAdviceController {
 
     @ExceptionHandler(value = IncorrectParticipantsFieldsException.class)
     public ResponseEntity<Object> handleIncorrectParticipantsFieldsException(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header(HEADER_CONTENT_TYPE, APPLICATION_JSON_WITH_CHARSET)
+                .body(e.getMessage());
+    }
+
+    @ExceptionHandler(value = UserIsAlreadyInTournamentException.class)
+    public ResponseEntity<Object> handleUserIsAlreadyInTournamentException(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header(HEADER_CONTENT_TYPE, APPLICATION_JSON_WITH_CHARSET)
+                .body(e.getMessage());
+    }
+
+    @ExceptionHandler(value = IllegalAccessOperationException.class)
+    public ResponseEntity<Object> handleIllegalAccessOperationException(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header(HEADER_CONTENT_TYPE, APPLICATION_JSON_WITH_CHARSET)
+                .body(e.getMessage());
+    }
+
+    @ExceptionHandler(value = TournamentIsAlreadyFinishedException.class)
+    public ResponseEntity<Object> handleTournamentIsAlreadyFinishedException(Exception e) {
         log.error(e.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)

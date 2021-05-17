@@ -4,6 +4,7 @@ import bruh.entity.User;
 import bruh.repo.IUserRepo;
 import bruh.services.authreg.RegistrationService;
 import bruh.util.encoder.PasswordEncoder;
+import bruh.util.powerGenerator.PowerGenerator;
 import org.hibernate.exception.ConstraintViolationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,8 @@ import static bruh.util.constants.LoggerMessages.USERNAME_IS_BUSY;
 class RegistrationServiceTest {
     private final IUserRepo postgresRepo = Mockito.mock(IUserRepo.class);
     private final PasswordEncoder passwordEncoder = Mockito.mock(PasswordEncoder.class);
-    private final RegistrationService cut = new RegistrationService(postgresRepo, passwordEncoder);
+    private final PowerGenerator powerGenerator = Mockito.mock(PowerGenerator.class);
+    private final RegistrationService cut = new RegistrationService(postgresRepo, passwordEncoder, powerGenerator);
 
     private static Stream<Arguments> redisServiceTestNominal() {
         return Stream.of(

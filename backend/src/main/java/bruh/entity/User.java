@@ -34,6 +34,8 @@ public class User {
 
     private int loses;
 
+    private int wins;
+
     private int power;
 
     public User(String login, String password, String role) {

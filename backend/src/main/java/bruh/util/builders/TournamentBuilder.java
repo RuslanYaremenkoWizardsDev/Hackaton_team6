@@ -1,17 +1,25 @@
 package bruh.util.builders;
 
 import bruh.entity.Tournament;
-import bruh.exceptions.InvalidParticipantsNumberException;
 import bruh.model.TournamentDto;
+import bruh.util.validators.TournamentValidator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TournamentBuilder {
+    private final TournamentValidator tournamentValidator;
+
+    @Autowired
+    public TournamentBuilder(TournamentValidator tournamentValidator) {
+        this.tournamentValidator = tournamentValidator;
+    }
+
 
     public Tournament buildTournamentByTournamentDto(TournamentDto tournamentDto) {
         Tournament tournament = new Tournament(tournamentDto.getName(), tournamentDto.getDescription(), tournamentDto.getPlace(),
                 tournamentDto.getStartDate(), tournamentDto.getEndDate());
-        validateParticipants(tournamentDto.getParticipants());
+        tournamentValidator.validateParticipants(tournamentDto.getParticipants());
 
         if (tournamentDto.getMode() != null) {
             tournament.setMode(tournamentDto.getMode());
@@ -39,19 +47,6 @@ public class TournamentBuilder {
         return new TournamentDto(tournament.getName(), tournament.getDescription(), tournament.getMode(), tournament.getPlace(),
                 tournament.getStartDate(), tournament.getEndDate(), tournament.getTournamentLevel(),
                 tournament.getParticipants(), tournament.getScenario(), tournament.getTournamentStatus(), null,
-                tournament.getParticipants());
-    }
-
-    private void validateParticipants(int participantsDto) {
-        int i = 128;
-        while (i / 2 != 0) {
-            int checkNumber = i / 2;
-            if (participantsDto == checkNumber) {
-                return;
-            }
-            i /= 2;
-        }
-        throw new InvalidParticipantsNumberException(
-                String.format("%s is unacceptable value (acceptable values = 4,8,16,32,64,128)", participantsDto));
+                tournament.getCurrentParticipants());
     }
 }
