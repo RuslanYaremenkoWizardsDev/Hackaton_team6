@@ -19,6 +19,7 @@ import static bruh.util.constants.LoggerMessages.USER_WAS_NOT_FOUND;
 
 class AuthorizationServiceTest {
 
+    private static final String USER = "user";
     private final IUserRepo postgressRepo = Mockito.mock(IUserRepo.class);
     private final PasswordEncoder passwordEncoder = Mockito.mock(PasswordEncoder.class);
     private final JWTProducer jwtProducer = Mockito.mock(JWTProducer.class);
@@ -26,9 +27,9 @@ class AuthorizationServiceTest {
 
     private static Stream<Arguments> redisServiceTestNominal() {
         return Stream.of(
-                Arguments.arguments(new User("jeid", "qwerty", "user")),
-                Arguments.arguments(new User("ufora", "asdfgh", "user")),
-                Arguments.arguments(new User("trolan12", "123456", "user"))
+                Arguments.arguments(new User("jeid", "qwerty", USER)),
+                Arguments.arguments(new User("ufora", "asdfgh", USER)),
+                Arguments.arguments(new User("trolan12", "123456", USER))
         );
     }
 
@@ -46,7 +47,7 @@ class AuthorizationServiceTest {
 
     @Test
     void authorizeUserNotFoundExceptionTest() {
-        User user = new User("ufora2", "trolan2", "user");
+        User user = new User("ufora2", "trolan2", USER);
         Mockito.when(postgressRepo.findUserByLogin(user.getLogin())).thenReturn(Optional.empty());
 
         Throwable throwable =
@@ -58,8 +59,8 @@ class AuthorizationServiceTest {
 
     @Test
     void authorizeUserIncorrectCredentialsExceptionTest() {
-        User user = new User("ufora1", "trolan1", "user");
-        User user1 = new User("ufora12", "trolan23", "user");
+        User user = new User("ufora1", "trolan1", USER);
+        User user1 = new User("ufora12", "trolan23", USER);
         Mockito.when(postgressRepo.findUserByLogin(user.getLogin())).thenReturn(Optional.of(user1));
         Mockito.when(passwordEncoder.encode(user.getPassword())).thenReturn(user.getPassword() + "not");
 

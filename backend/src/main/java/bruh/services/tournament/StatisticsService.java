@@ -2,7 +2,6 @@ package bruh.services.tournament;
 
 import bruh.entity.User;
 import bruh.model.TournamentStatisticDto;
-import bruh.model.UserDto;
 import bruh.model.UserStatisticDto;
 import bruh.repo.ITournamentRepo;
 import bruh.repo.IUserRepo;

@@ -12,6 +12,9 @@ import java.time.Clock;
 import java.util.stream.Stream;
 
 class JWTProducerTest {
+    private static final String USER = "user";
+    private static final String ADMIN = "admin";
+
     private final Clock clock = Mockito.mock(Clock.class);
     private final long expTime = 4230000000000000L;
 
@@ -25,10 +28,10 @@ class JWTProducerTest {
 
     public static Stream<Arguments> createJWTTestNominal() {
         return Stream.of(
-                Arguments.arguments("trolan", "user", 215151155, 215151),
-                Arguments.arguments("ufora", "admin", 123465456, 123465),
-                Arguments.arguments("vurado", "user", 12456214, 12456),
-                Arguments.arguments("jeid", "admin", 854123654, 854123)
+                Arguments.arguments("trolan", USER, 215151155, 215151),
+                Arguments.arguments("ufora", ADMIN, 123465456, 123465),
+                Arguments.arguments("vurado", USER, 12456214, 12456),
+                Arguments.arguments("jeid", ADMIN, 854123654, 854123)
 
         );
     }
