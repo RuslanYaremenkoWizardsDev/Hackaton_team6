@@ -37,7 +37,7 @@
                 <img src="img/wheel.png">
             </button>
             <div class="changePassLogModal" id="changePassLogModal">
-                <div class="ChangeLogin">
+                <div class="ChangeLogin" id = "myBtnChange">
                     Change Login
                 </div>
                 <div class="ChangePassword">
@@ -46,12 +46,27 @@
             </div>
         </div>
         <div class=" left-icon logOut">
-            <button id="logOut">
+            <button onclick="window.location.href = 'index.html';" id="logOut">
                 <img src="img/door.png">
             </button>
         </div>
     </div>
 </header>
+
+<div id="myModalChange" class="modal">
+
+    <div class="modal-content ">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 class = "loginModal">Change login</h2>
+        </div>
+        <div class="modal-body">
+            <input class = "inputBtn" id="inputLoginNew" placeholder="Enter your new login...">
+        </div>
+        <button onclick="window.location.href = 'index.html';" class = "btnConfirm" id = "">CONFIRM</button>
+    </div>
+
+</div>
 <main>
     <div class="modalClearAll" id="modalClearAll">
         <div class="krest">
@@ -80,7 +95,7 @@
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
         </div>
-        <div class="clearAll">
+        <div class="clearAll ">
             <button id="clearAll">Clear All</button>
         </div>
         <div class="folders">
@@ -309,7 +324,6 @@
                 modalClearAll.style.display = "none" ;
             });
 
-
             const chageLogPassButt = document.getElementById("changePassLog");
             const chageLogPassModal = document.getElementById("changePassLogModal");
 
@@ -356,6 +370,22 @@
         crateTour.classList.remove("active");
         stats.classList.add("active");
     });
+            var modal = document.getElementById('myModalChange')
+            var btn = document.getElementById('myBtnChange')
+            var span = document.getElementsByClassName('close')[0];
+
+            btn.onclick = function (){
+                modal.style.display = "block";
+            }
+            span.onclick = function (){
+                modal.style.display = "none";
+            }
+            window.onclick = function (event){
+                if (event.target == modal) {
+                    modal.style.display = "none";
+
+                }
+            }
 </script>
 </body>
 </html>
