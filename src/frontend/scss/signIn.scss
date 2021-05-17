@@ -1,0 +1,135 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.light{
+  background-color: white;
+}
+
+.dark{
+  background-color: #393B3C;
+}
+
+input{
+  width: 80%;
+  height: 45px;
+  box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.25);
+  background: #212527;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  padding-left: 14px;
+}
+
+
+input::placeholder{
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(143, 143, 143, 0.3);
+}
+
+a{
+  color: cornflowerblue;
+}
+
+button{
+  cursor: pointer;
+}
+
+
+.form__password i {
+  margin-top: 1%;
+  margin-left: -2.5%;
+  cursor: pointer;
+  color: rgba(143, 143, 143, 0.3);
+  position: absolute;
+}
+
+.signIn-form{
+  width: 28%;
+  height: 370px;
+  margin: 5% auto 3% auto;
+  padding: auto;
+  text-align: center;
+  background-color: #23272A;
+  box-shadow:0 0 10px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.form__sign{
+  padding-top: 20px;
+  font-size: 36px;
+  color: white;
+}
+
+.block__left--name{
+  font-size: 20px;
+  padding: 0;
+}
+
+.SignInButton{
+  background: #46CD7C;
+  width: 40%;
+  margin-top: 30px;
+  height: 45px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 24px;
+}
+
+.GuestButton{
+  background: #85BDE0;
+  width: 30%;
+  margin-top: 30px;
+  height: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.form__input-name{
+  width: 80%;
+  margin:20px auto 10px 40px;
+  font-size: 14px;
+  text-align: left;
+  color: #757575;
+  font-family: 'Play', sans-serif;
+  float: left;
+}
+
+.form__lastWords{
+  color: #757575;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.SignInButton:hover {
+  box-shadow: 0px 4px 4px white;
+  transition: 0.4s;
+}
+.GuestButton:hover{
+  box-shadow: 0px 4px 4px white;
+  transition: 0.4s;
+}
+
+#modeSwitchToDark{
+  display: none;
+}
+
+#LoginInput_SignIn, #PasswordInput_SignIn, #UserNameInput_SignUp, #PasswordInput_SignUp, #ConfirmPasswordInput{
+  color: white;
+}

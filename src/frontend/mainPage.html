@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
+   
+</head>
+<body>
+<header class="header">
+    <div class="left-part">
+        <div class="left-part__logo">
+            <img id="logoPzdc" src="img/logo.png">
+        </div>
+        <div class="left-part__name">
+            Bruh
+        </div>
+        <a href="createAccount.html">NEXT </a>
+        <a href="index.html"> PREV</a>
+    </div>
+    <div class="right-part">
+        <div class=" left-icon mode-switch">
+            <button id="mode-switch">
+                <img id="sun" src="img/sun.png">
+            </button>
+        </div>
+        <div class="left-icon changePassLog">
+            <button id="changePassLog">
+                <img src="img/wheel.png">
+            </button>
+            <div class="changePassLogModal" id="changePassLogModal">
+                <div class="ChangeLogin" id = "myBtnChange">
+                    Change Login
+                </div>
+                <div class="ChangePassword">
+                    Change Password
+                </div>
+            </div>
+        </div>
+        <div class=" left-icon logOut">
+            <button onclick="window.location.href = 'index.html';" id="logOut">
+                <img src="img/door.png">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div id="myModalChange" class="modal">
+
+    <div class="modal-content ">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 class = "loginModal">Change login</h2>
+        </div>
+        <div class="modal-body">
+            <input class = "inputBtn" id="inputLoginNew" placeholder="Enter your new login...">
+        </div>
+        <button onclick="window.location.href = 'index.html';" class = "btnConfirm" id = "">CONFIRM</button>
+    </div>
+
+</div>
+<main>
+    <div class="modalClearAll" id="modalClearAll">
+        <div class="krest">
+            <button id="krest"> ✕</button>
+        </div>
+        <div class="modalClearAll__sign">
+            CLEAR ALL?
+        </div>
+        <div class="buttons">
+            <button id="yesbutton">YES</button>
+            <button id="nobutton">NO</button>
+        </div>
+    </div>
+    <div class="main-block" id="main-block">
+        <div class="search">
+            <div class="search__input fg--search">
+                <input class="search__input--input" required placeholder="Search by end date">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="search__input fg--search">
+                <input class="search__input--input" required placeholder="Search by mode">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="search__input fg--search">
+                <input class="search__input--input"  required placeholder="Search by username">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="clearAll ">
+            <button id="clearAll">Clear All</button>
+        </div>
+        <div class="folders">
+            <button class="content-switch active" id="tournament">Tournaments</button>
+            <button class="content-switch" id="createTour">Create tournament</button>
+            <button class="content-switch" id="stats">Stats</button>
+        </div>
+        <div class="content1" id="content1">
+            <section>
+                <div class="container" class = 'table-name'>
+                    <div class="row">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Mode</th>
+                                <th scope="col">StartDate</th>
+                                <th scope="col">LastRegDate</th>
+                                <th scope="col">State</th>
+                                <th scope="col">Level</th>
+                                <th scope="col">Participants</th>
+                                <th scope="col">Scenario</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td data-label="Tournament">Super Cup</td>
+                                <td data-label="Mode">Cup</td>
+                                <td data-label="StartDate">16.05.2021 16:00</td>
+                                <td data-label="LastRegDate">18.05.2021 18:00</td>
+                                <td data-label="State">In progress</td>
+                                <td data-label="Level">Middle</td>
+                                <td data-label="Participants">6 / 32 players</td>
+                                <td data-label="Scenario">one-match</td>
+                                <td data-label="Actions">Image</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Tournament">Super Cup</td>
+                                <td data-label="Mode">Cup</td>
+                                <td data-label="StartDate">16.05.2021 16:00</td>
+                                <td data-label="LastRegDate">18.05.2021 18:00</td>
+                                <td data-label="State">In progress</td>
+                                <td data-label="Level">Middle</td>
+                                <td data-label="Participants">6 / 32 players</td>
+                                <td data-label="Scenario">one-match</td>
+                                <td data-label="Actions">Image</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="content2" id="content2">
+            <div class="content2flex">
+            <div class="rightCont">
+                <div   class="hui rightCont__label">
+                    Name:
+                </div>
+                <div class="rightCont__input">
+                    <input id="CreateTourName" placeholder="Enter your login..." >
+                </div>
+                <div   class="hui rightCont__label">
+                    Description:
+                </div>
+                <div class="rightCont__input">
+                    <input id="CreateTourDescription" placeholder="Enter your description..." >
+                </div>
+                <div   class="hui rightCont__label">
+                    Mode:
+                    <input type="checkbox" id="radioButton">
+                    <label for="radioButton" id="cupLabel">cup</label>
+                </div>
+                <div   class="hui rightCont__label">
+                    Place:
+                </div>
+                <div class="rightCont__input">
+                    <input id="CreateTourPlace" placeholder="Enter your place..." >
+                </div>
+                <div class="dateRaw">
+                    <div   class="hui rightCont__label">
+                        Start date:
+                    </div>
+                    <div class="rightCont__input">
+                        <input id="CreateTourStartDate" >
+                    </div>
+                    <div   class="hui rightCont__label">
+                        End date:
+                    </div>
+                    <div class="rightCont__input">
+                        <input id="CreateTourEndDate"  >
+                    </div>
+                </div>
+                <div class="dateRaw">
+                    <div   class="hui rightCont__label">
+                        Level of tournament:
+                    </div>
+                    <div class="rightCont__input">
+                        <select id="CreateTourLevel">
+                            <option value="Advanced">Advanced</option>
+                            <option value="Middle" selected="selected">Middle</option>
+                            <option value="Beginner">Beginner</option>
+                        </select>
+                    </div>
+                    <div   class="hui rightCont__label">
+                        Number of players:
+                    </div>
+                    <div class="rightCont__input">
+                        <select id="CreateTourNumPlay">
+                            <option value="128">128</option>
+                            <option value="64">64</option>
+                            <option value="32" selected="selected">32</option>
+                            <option value="16">16</option>
+                            <option value="8">8</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+               <div class="dateRaw">
+                   <div   class="hui rightCont__label">
+                       Scenario for tournament:
+                   </div>
+                   <div class="rightCont__input">
+                       <select id="CreateTourScenario">
+                           <option value="onematch">One match confrantation</option>
+                           <option value="twomatch">Two match confrantation</option>
+                           <option value="threewins">Three wins</option>
+                       </select>
+                   </div>
+               </div>
+                <div class="dateRaw">
+                    <div   class="hui rightCont__label">
+                        Invite players:
+                    </div>
+                    <div class="rightCont__input">
+                        <select id="CreateTourPlayersChoose">
+                            <option value="Player1">Player 1</option>
+                            <option value="Player2" >Player2</option>
+                            <option value="Player3">Player 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="createButton">
+                    <button id="createButton">Create</button>
+                </div>
+            </div>
+            <div class="leftCont"> </div>
+            </div>
+        </div>
+
+        <div class="content3" id="content3">
+            <section class="tournaments">
+                <h2 class="tableNames">TOURNAMENTS</h2>
+                <div class="container container3" >
+                    <div class="row container3">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th scope="col">Tournament mode</th>
+                                <th scope="col">Finished</th>
+                                <th scope="col">Closed</th>
+                                <th scope="col">Canceled</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td data-label="Tournament mode">Super Cup</td>
+                                <td data-label="Finished">Cup</td>
+                                <td data-label="Closed">16.05.2021 16:00</td>
+                                <td data-label="Canceled">18.05.2021 18:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="players">
+                <h2 class="tableNames" id="h2players">PLAYERS</h2>
+                <div class="container container3">
+                    <div class="row container3">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th scope="col">Email/Login</th>
+                                <th scope="col">Games</th>
+                                <th scope="col">Wins</th>
+                                <th scope="col">Drows</th>
+                                <th scope="col">Loses</th>
+                                <th scope="col">Cup Wins</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td data-label="Email/Login">Super Cup</td>
+                                <td data-label="Games">Cup</td>
+                                <td data-label="Wins">16.05.2021 16:00</td>
+                                <td data-label="Drows">18.05.2021 18:00</td>
+                                <td data-label="Loses">16.05.2021 16:00</td>
+                                <td data-label="Cup Wins">18.05.2021 18:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+<footer>
+    Bruh | 2021
+</footer>
+        <script>
+
+            const clearAll = document.getElementById("clearAll");
+            const modalClearAll = document.getElementById("modalClearAll");
+            const krest = document.getElementById("krest");
+
+            clearAll.addEventListener("click", function (e) {
+                modalClearAll.style.display = "block" ;
+            });
+
+            krest.addEventListener("click", function (e) {
+                modalClearAll.style.display = "none" ;
+            });
+
+            const chageLogPassButt = document.getElementById("changePassLog");
+            const chageLogPassModal = document.getElementById("changePassLogModal");
+
+            chageLogPassButt.addEventListener("click", function (e) {
+                chageLogPassModal.style.display = "block";
+            });
+
+            chageLogPassModal.addEventListener("click", function (e) {
+                chageLogPassModal.style.display = "none";
+            });
+
+    const tournament = document.getElementById("tournament");
+    const crateTour = document.getElementById("createTour");
+    const stats = document.getElementById("stats");
+    const content1 = document.getElementById("content1");
+    const content2 = document.getElementById("content2");
+    const content3 = document.getElementById("content3");
+
+    tournament.addEventListener("click",function (e) {
+        content1.style.display = "block";
+        content2.style.display = "none";
+        content3.style.display = "none";
+        crateTour.classList.remove("active");
+        stats.classList.remove("active");
+        tournament.classList.add("active");
+
+    });
+
+    crateTour.addEventListener("click",function (e) {
+        console.log("hui");
+        content1.style.display = "none";
+        content2.style.display = "block";
+        content3.style.display = "none";
+        tournament.classList.remove("active");
+        stats.classList.remove("active");
+        crateTour.classList.add("active");
+    });
+
+    stats.addEventListener("click",function (e) {
+        content1.style.display = "none";
+        content2.style.display = "none";
+        content3.style.display = "block";
+        tournament.classList.remove("active");
+        crateTour.classList.remove("active");
+        stats.classList.add("active");
+    });
+            var modal = document.getElementById('myModalChange')
+            var btn = document.getElementById('myBtnChange')
+            var span = document.getElementsByClassName('close')[0];
+
+            btn.onclick = function (){
+                modal.style.display = "block";
+            }
+            span.onclick = function (){
+                modal.style.display = "none";
+            }
+            window.onclick = function (event){
+                if (event.target == modal) {
+                    modal.style.display = "none";
+
+                }
+            }
+</script>
+</body>
+</html>

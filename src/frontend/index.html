@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body class="dark" id="BigBody">
+<header class="header">
+    <div class="left-part">
+        <div class="left-part__logo">
+            <img id="logoPzdc" src="img/logo.png">
+        </div>
+        <div class="left-part__name">
+            Bruh
+        </div>
+        <a href="mainPage.html">NEXT </a>
+        <a href="createAccount.html"> PREV</a>
+    </div>
+    <div class="right-part">
+        <div class=" left-icon mode-switch">
+            <button id="mode-switch">
+                <img id="sunJopa" src="img/sun.png">
+            </button>
+        </div>
+    </div>
+</header>
+<main id="main">
+        <div class="signIn-form">
+            <div class="form__sign">
+                SIGN IN
+            </div>
+            <div class="signIn-form__login">
+                <label for="LoginInput_SignIn" class="form__input-name">
+                    LOGIN
+                </label>
+                <div class="signIn-form__input">
+                    <input id="LoginInput_SignIn" placeholder="Enter your login..." tabindex="1">
+                </div>
+            </div>
+            <div class="form__password">
+                <label for="PasswordInput_SignIn" class="form__input-name">
+                    PASSWORD
+                </label>
+                <div class="signIn-form__input">
+                    <input  id="PasswordInput_SignIn" placeholder="Enter your password..." type="password" tabindex="2">
+                   <i class="far fa-eye" id="togglePassword"></i>
+                </div>
+
+            </div>
+            <div class="signIn-form__submit-button">
+                <button class="SignInButton" tabindex="3" id = "SignInButton">Submit</button>
+                <button class="GuestButton">log in as guest</button>
+            </div>
+            <div class="form__lastWords">
+                Need an account? <a href="createAccount.html">Register now</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Bruh | 2021
+    </footer>
+    <script>
+        const localizationSwitch = document.getElementById('localization-switch');
+        const dropdownLang = document.getElementById('dropdown-content');
+        const lightModeButton = document.getElementById("modeSwitchToLight");
+        const darkModeButton = document.getElementById("modeSwitchToDark");
+        const bodyPg = document.getElementById("BigBody");
+
+        lightModeButton.addEventListener('click', function (e) {
+            bodyPg.classList.add('light');
+            bodyPg.classList.remove('dark');
+            lightModeButton.style.display = "none";
+            darkModeButton.style.display = "block"
+        });
+
+        darkModeButton.addEventListener('click', function (e) {
+            console.log("test");
+            bodyPg.classList.add('dark');
+            bodyPg.classList.remove('light');
+            lightModeButton.style.display = "block";
+            darkModeButton.style.display = "none"
+        });
+
+        localizationSwitch.addEventListener('click', function (e) {
+            dropdownLang.style.display = "block";
+        });
+
+        dropdownLang.addEventListener('click', function (e) {
+            dropdownLang.style.display = "none";
+        });
+    </script>
+</body>
+</html>

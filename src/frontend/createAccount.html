@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="left-part">
+        <div class="left-part__logo">
+            <img id="logoPzdc" src="img/logo.png">
+        </div>
+        <div class="left-part__name">
+            Bruh
+        </div>
+        <a href="index.html">NEXT </a>
+        <a href="mainPage.html"> PREV</a>
+    </div>
+    <div class="right-part">
+        <div class=" left-icon mode-switch">
+            <button id="mode-switch">
+                <img id="sunJopa" src="img/sun.png">
+            </button>
+        </div>
+    </div>
+</header>
+    <main class="main">
+        <div class="signUp-form " id="user__block">
+            <div class="form__sign">
+                REGISTRATION
+            </div>
+            <div class="form__role">
+                Register as:
+                <button class="role__user activeCreate " >User</button>
+                <button class="role__admin choose" id="adminButton">Admin</button>
+            </div>
+            <label for="UserNameInput_SignUp" class="form__input-name">
+                LOGIN
+            </label>
+            <div class="signUp-form__input">
+                <input class="input__field" id="UserNameInput_SignUp" placeholder="Enter your login...">
+            </div>
+            <div class="form__password">
+                <label for="PasswordInput_SignUp" class="form__input-name">
+                    PASSWORD
+                </label>
+                <div class="container__input">
+                    <input class="input__field" id="PasswordInput_SignUp" type="password" placeholder="Enter your password...">
+                    <i class="far fa-eye" id="togglePassword"></i>
+                </div>
+                <label for="ConfirmPasswordInput" class="form__input-name">
+                    CONFIRM PASSWORD
+                </label>
+                <div class="container__input">
+                    <input class="input__field" id="ConfirmPasswordInput" type="password" placeholder="Confirm your password...">
+                </div>
+            </div>
+            <div class="container__button">
+                <button class="SignUpButton" id = "SignupBtnId" >Sign Up</button>
+                <button class="GuestButton">log in as guest</button>
+            </div>
+            <div class="form__lastWords">
+                Already Registered <a href="index.html">Sign In</a>
+            </div>
+        </div>
+
+        <div class="signUp-form " id="admin__block">
+            <div class="form__sign">
+                REGISTRATION
+            </div>
+            <div class="form__role">
+                Register as:
+                <button class="role__user choose " id="userButton">User</button>
+                <button class="role__admin activeCreate ">Admin</button>
+            </div>
+            <label for="AdminNameInput_SignUp" class="form__input-name">
+                LOGIN
+            </label>
+            <div class="signUp-form__input">
+                <input  id="AdminNameInput_SignUp" placeholder="Enter your login...">
+            </div>
+            <div class="form__password">
+                <label for="AdminPasswordInput_SignUp" class="form__input-name">
+                    PASSWORD
+                </label>
+                <div class="container__input">
+                    <input  id="AdminPasswordInput_SignUp" type="password" placeholder="Enter your password...">
+                    <i class="far fa-eye" id="AdmintogglePassword"></i>
+                </div>
+                <label for="AdminConfirmPasswordInput" class="form__input-name">
+                    CONFIRM PASSWORD
+                </label>
+                <div class="container__input">
+                    <input  id="AdminConfirmPasswordInput" type="password" placeholder="Confirm your password...">
+                </div>
+                <label for="AdminKey" class="form__input-name">
+                    ADMIN KEY
+                </label>
+                <div class="container__input">
+                    <input  id="AdminKey" type="password" placeholder="Enter admin key...">
+                </div>
+            </div>
+            <div class="container__button">
+                <button class="SignUpButton" >Sign Up</button>
+                <button class="GuestButton">log in as guest</button>
+            </div>
+            <div class="form__lastWords">
+                Already Registered <a href="index.html">Sign In</a>
+            </div>
+        </div>
+    </main>
+<footer>
+    Bruh | 2021
+</footer>
+<script>
+
+    const localizationSwitch = document.getElementById('localization-switch');
+    const dropdownLang = document.getElementById('dropdown-content');
+
+    localizationSwitch.addEventListener('click', function (e) {
+    dropdownLang.style.display = "block";
+    });
+
+    dropdownLang.addEventListener('click', function (e) {
+    dropdownLang.style.display = "none";
+    });
+</script>
+</body>
+</html>
