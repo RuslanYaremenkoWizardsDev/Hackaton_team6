@@ -15,6 +15,6 @@ public class LoggerMessages {
     public static final String NO_PLACE = "No place, start the tournament";
     public static final String USER_ALREADY_IN_TOURNAMENT = "User %s is already taking part in %s!";
     public static final String TOURNAMENT_IS_FINISHED = "Tournament %S is already finished";
-
-
+    public static final String SUCCESSFULLY_CHANGE_PASSWORD = "User %s was successfully change password";
+    public static final String SUCCESSFULLY_CHANGE_LOGIN = "User %s was successfully change login";
 }

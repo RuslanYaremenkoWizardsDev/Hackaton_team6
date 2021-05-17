@@ -3,7 +3,7 @@ package bruh.services.authreg;
 import bruh.entity.User;
 import bruh.repo.IUserRepo;
 import bruh.util.encoder.PasswordEncoder;
-import bruh.util.powerGenerator.PowerGenerator;
+import bruh.util.powergenerator.PowerGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -5,14 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import static bruh.util.constants.EntityMessages.USER_CREDENTIALS;
+import static bruh.util.constants.EntityMessages.*;
 import static bruh.util.constants.ValidationMessages.FIELD_CANNOT_BE_NULL;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = USER_CREDENTIALS, uniqueConstraints = {@UniqueConstraint(columnNames = {"login"}, name = "uk_login")})
+@Table(name = USER_CREDENTIALS, uniqueConstraints = {@UniqueConstraint(columnNames = {USER_LOGIN}, name = UNIQUE_LOGIN_CONSTRAINT)})
 public class User {
 
     @Id

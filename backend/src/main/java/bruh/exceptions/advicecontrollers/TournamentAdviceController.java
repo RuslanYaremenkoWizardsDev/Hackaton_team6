@@ -16,7 +16,8 @@ import static bruh.util.constants.ResponseHeaders.HEADER_CONTENT_TYPE;
 
 @Slf4j
 @ControllerAdvice(basePackageClasses = {TournamentController.class, GetTournamentController.class,
-        GetCupGridController.class, AddParticipantsToTournamentController.class, SearchTournamentController.class, StatisticsController.class})
+        GetCupGridController.class, AddParticipantsToTournamentController.class, SearchTournamentController.class,
+        StatisticsController.class})
 public class TournamentAdviceController {
 
     @ExceptionHandler(value = InvalidParticipantsNumberException.class)

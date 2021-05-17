@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 class RegistrationControllerTest {
-
+    private static final String USER = "user";
     private static final String CONTENT_TYPE = "Content-Type";
     private static final String URL_TEMPLATE = "/registration";
     private static final String APPLICATION_JSON_CHARSET_UTF_8 = "application/json; charset=utf-8";
@@ -47,10 +47,10 @@ class RegistrationControllerTest {
 
     static Stream<Arguments> registerUserTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto("trolan2", "1234567", "user")),
-                Arguments.arguments(new UserDto("jeid1", "abcdef", "user")),
-                Arguments.arguments(new UserDto("ufora1", "happy123", "user")),
-                Arguments.arguments(new UserDto("antenna1", "asdcvbasd7", "user"))
+                Arguments.arguments(new UserDto("trolan2", "1234567", USER)),
+                Arguments.arguments(new UserDto("jeid1", "abcdef", USER)),
+                Arguments.arguments(new UserDto("ufora1", "happy123", USER)),
+                Arguments.arguments(new UserDto("antenna1", "asdcvbasd7", USER))
 
         );
     }
@@ -72,12 +72,12 @@ class RegistrationControllerTest {
 
     static Stream<Arguments> registerUserExceptionTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto(null, "asdasdasd", "user"), FIELD_CANNOT_BE_NULL),
-                Arguments.arguments(new UserDto("фывфы", "123456", "user"), LOGIN_VALIDATE_MESSAGE),
-                Arguments.arguments(new UserDto("asdВВВв", "123456asd", "user"), LOGIN_VALIDATE_MESSAGE),
-                Arguments.arguments(new UserDto("trolan", null, "user"), FIELD_CANNOT_BE_NULL),
-                Arguments.arguments(new UserDto("ufora", "ываыва", "user"), PASSWORD_VALIDATE_MESSAGE),
-                Arguments.arguments(new UserDto("jeid", "asdas", "user"), PASSWORD_VALIDATE_MESSAGE)
+                Arguments.arguments(new UserDto(null, "asdasdasd", USER), FIELD_CANNOT_BE_NULL),
+                Arguments.arguments(new UserDto("фывфы", "123456", USER), LOGIN_VALIDATE_MESSAGE),
+                Arguments.arguments(new UserDto("asdВВВв", "123456asd", USER), LOGIN_VALIDATE_MESSAGE),
+                Arguments.arguments(new UserDto("trolan", null, USER), FIELD_CANNOT_BE_NULL),
+                Arguments.arguments(new UserDto("ufora", "ываыва", USER), PASSWORD_VALIDATE_MESSAGE),
+                Arguments.arguments(new UserDto("jeid", "asdas", USER), PASSWORD_VALIDATE_MESSAGE)
         );
     }
 

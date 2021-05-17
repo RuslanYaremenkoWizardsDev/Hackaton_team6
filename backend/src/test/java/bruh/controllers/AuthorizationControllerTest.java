@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 
 class AuthorizationControllerTest {
-
+    private static final String USER = "user";
     private static final String URL_TEMPLATE = "/authorization";
     private static final String CONTENT_TYPE = "Content-Type";
     private static final String APPLICATION_JSON_CHARSET_UTF_8 = "application/json; charset=utf-8";
@@ -52,9 +52,9 @@ class AuthorizationControllerTest {
 
     private static Stream<Arguments> authorizeUserTestNominal() {
         return Stream.of(
-                Arguments.arguments(new UserDto("jeid", "qwerty", "user")),
-                Arguments.arguments(new UserDto("ufora", "asdfgh", "user")),
-                Arguments.arguments(new UserDto("trolan1", "123456", "user"))
+                Arguments.arguments(new UserDto("jeid", "qwerty", USER)),
+                Arguments.arguments(new UserDto("ufora", "asdfgh", USER)),
+                Arguments.arguments(new UserDto("trolan1", "123456", USER))
         );
     }
 
@@ -78,7 +78,8 @@ class AuthorizationControllerTest {
     @MethodSource("authorizeUserTestNominal")
     void authorizeUserIsAuthorizedTest(UserDto user) throws Exception {
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
-        Mockito.when(authorizationService.authorizeUser(new User(user.getLogin(), user.getPassword(), user.getRole()))).thenReturn(user.getLogin());
+        Mockito.when(authorizationService.authorizeUser(new User(user.getLogin(), user.getPassword(), user.getRole())))
+                .thenReturn(user.getLogin());
 
         mockMvc.perform(post(URL_TEMPLATE)
                 .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
@@ -108,8 +109,8 @@ class AuthorizationControllerTest {
     static Stream<Arguments> authorizeUserExceptionTestNominal() {
         String errMsg = FIELD_CANNOT_BE_NULL;
         return Stream.of(
-                Arguments.arguments(new UserDto(null, "asdasdasd", "user"), errMsg),
-                Arguments.arguments(new UserDto("trolan", null, "user"), errMsg)
+                Arguments.arguments(new UserDto(null, "asdasdasd", USER), errMsg),
+                Arguments.arguments(new UserDto("trolan", null, USER), errMsg)
         );
     }
 

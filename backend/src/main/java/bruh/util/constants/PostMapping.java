@@ -14,4 +14,6 @@ public class PostMapping {
     public static final String SEARCH_BY_USERNAME_MAPPING = "/searchByUsername";
     public static final String TOURNAMENT_STATISTIC_MAPPING = "/tournamentStatistic";
     public static final String USER_STATISTIC_MAPPING = "/userStatistic";
+    public static final String CHANGE_LOGIN_MAPPING = "/changeLogin";
+    public static final String CHANGE_PASSWORD_MAPPING = "/changePassword";
 }

@@ -1,9 +1,6 @@
 package bruh.services.tournament;
 
 import bruh.entity.Tournament;
-import bruh.entity.TournamentParticipant;
-import bruh.exceptions.InvalidCredentialsException;
-import bruh.exceptions.TournamentNotFoundException;
 import bruh.model.TournamentDto;
 import bruh.repo.ITournamentParticipantRepo;
 import bruh.repo.ITournamentRepo;
@@ -13,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
-import static bruh.util.constants.LoggerMessages.TOURNAMENT_WAS_NOT_FOUND;
 
 @Slf4j
 @Service
