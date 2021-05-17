@@ -1,4 +1,4 @@
-package bruh.util.powergenerator;
+package bruh.util.generatopower;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -4,7 +4,7 @@ import bruh.entity.User;
 import bruh.repo.IUserRepo;
 import bruh.services.authreg.RegistrationService;
 import bruh.util.encoder.PasswordEncoder;
-import bruh.util.powergenerator.PowerGenerator;
+import bruh.util.generatopower.PowerGenerator;
 import org.hibernate.exception.ConstraintViolationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
