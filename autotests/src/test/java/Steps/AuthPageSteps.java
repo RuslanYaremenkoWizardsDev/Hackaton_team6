@@ -14,9 +14,9 @@ public class AuthPageSteps extends Steps{
     private final Actions action =  new Actions(DriverConfig.getDriver());
 
     @Given("^I open auth page$")
-    public void iOpenMainPage(){
+    public void iOpenAuthPage(){
         logger.info("I open auth page");
-        DriverConfig.getDriver().get(SITE_URL);
+        DriverConfig.getDriver().get(AUTH_PAGE_URL);
     }
 
     @And("^I check submitButton visibility$")

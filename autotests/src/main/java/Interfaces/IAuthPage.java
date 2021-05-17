@@ -2,6 +2,6 @@ package Interfaces;
 
 import org.openqa.selenium.WebElement;
 
-public interface IAuthPage extends IPage{
+public interface IAuthPage {
     WebElement getSubmitButton();
 }

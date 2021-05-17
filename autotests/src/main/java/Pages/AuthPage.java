@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
 
-
 @Getter
 public class AuthPage implements IAuthPage {
     WebDriver driver;
@@ -19,6 +18,7 @@ public class AuthPage implements IAuthPage {
 
     @FindBy(css = "body > main > div > div.signIn-form__submit-button > button.SignInButton")
     private WebElement submitButton;
+
 
 //    public static WebElement waitForVisibility(WebElement element, int timeOfWait, int... timeOfTryOut) {
 //        WebElement webElement = null;
@@ -36,3 +36,4 @@ public class AuthPage implements IAuthPage {
 //        return webElement;
 //    }
 }
+
