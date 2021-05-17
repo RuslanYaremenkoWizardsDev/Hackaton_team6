@@ -203,6 +203,7 @@
      Status: 400 Bad request;    
      body : "Tournament four was not found";
 
+
 ### Requests for delete tournament ###
 
 - URL: http://localhost:8081/getTournament;
